@@ -54,7 +54,7 @@ const Card = ({
         </div>
         <div className="">  
             <button className="w-full  bg-[#f37002] text-white font-semibold py-2 rounded-lg my-2 ">
-             Awail This Offers
+             Avail This Offers
             </button>
         </div>
       </div>

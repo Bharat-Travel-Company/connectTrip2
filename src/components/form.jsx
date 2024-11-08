@@ -36,7 +36,7 @@ const SignUpForm = ({ selectedPackage }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-4 bg-white rounded-lg shadow-lg">
+    <form onSubmit={handleSubmit} className="space-y-4 p-4 bg-white rounded-lg">
       {/* Heading */}
       <h2 className="text-center text-lg font-semibold text-orange-600 mb-4">
         Request Callback for: {selectedPackage?.packageName}
@@ -61,7 +61,7 @@ const SignUpForm = ({ selectedPackage }) => {
             value={formData[field]}
             min={0}
             onChange={handleChange}
-            className="w-full bg-white text-gray-900 border border-orange-400 rounded-md px-3 py-2 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600"
+            className="w-full bg-white text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600"
             placeholder={`${
               field.charAt(0).toUpperCase() + field.slice(1).replace(/([A-Z])/g, " $1")
             }`}

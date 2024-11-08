@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+
 const SignUpForm = ({ selectedPackage }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -26,8 +27,8 @@ const SignUpForm = ({ selectedPackage }) => {
     axios
       .post(`https://tourplanerbackend.onrender.com/send-email`, formData)
       .then((res) => {
-        if (res.message === "Form submitted successfully") {
-          alert("Contact Form submited");
+        if (res.data.message === "Form submitted successfully") {
+          alert("Contact Form submitted");
         } else {
           alert(res.data.message);
         }
@@ -35,15 +36,17 @@ const SignUpForm = ({ selectedPackage }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 ">
-      <h2 className="text-xl font-semibold mb-4">
+    <form onSubmit={handleSubmit} className="space-y-4 p-4 bg-white rounded-lg shadow-lg">
+      {/* Heading */}
+      <h2 className="text-center text-lg font-semibold text-orange-600 mb-4">
         Request Callback for: {selectedPackage?.packageName}
       </h2>
+
+      {/* Input Fields */}
       {["name", "phone", "email", "numberOfMembers"].map((field) => (
         <div key={field} className="w-full">
-          <label className="block mb-2 text-sm text-[#fcaf17]" htmlFor={field}>
-            {field.charAt(0).toUpperCase() +
-              field.slice(1).replace(/([A-Z])/g, " $1")}
+          <label className="block mb-2 text-sm text-orange-600" htmlFor={field}>
+            {field.charAt(0).toUpperCase() + field.slice(1).replace(/([A-Z])/g, " $1")}
           </label>
           <input
             type={
@@ -58,21 +61,34 @@ const SignUpForm = ({ selectedPackage }) => {
             value={formData[field]}
             min={0}
             onChange={handleChange}
-            className="w-full bg-white text-[#0F1E32] border border-[#F37004] rounded-md px-3 py-2 focus:outline-none focus:border-[#F37004] focus:ring-1 focus:ring-[#F37004]"
+            className="w-full bg-white text-gray-900 border border-orange-400 rounded-md px-3 py-2 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600"
             placeholder={`${
-              field.charAt(0).toUpperCase() +
-              field.slice(1).replace(/([A-Z])/g, " $1")
+              field.charAt(0).toUpperCase() + field.slice(1).replace(/([A-Z])/g, " $1")
             }`}
             required
           />
         </div>
       ))}
+
+      {/* Submit Button */}
       <button
-        className="mt-4 w-full rounded-md bg-[#F37004] py-2 px-4 text-white font-medium transition-all hover:bg-[#F37004]/90 focus:bg-[#F37004] focus:outline-none focus:ring-2 focus:ring-[#F37004] focus:ring-offset-2"
+        className="w-full bg-orange-600 text-white font-semibold py-3 rounded-md hover:bg-orange-700 transition focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2"
         type="submit"
       >
-        Submit
+        Send me Quotes →
       </button>
+
+      {/* Disclaimer */}
+      <p className="text-xs text-gray-500 mt-4 text-center">
+        By clicking on "Submit", you agree to our{" "}
+        <a href="#" className="text-orange-600 underline">
+          Privacy Policy
+        </a>{" "}
+        and{" "}
+        <a href="#" className="text-orange-600 underline">
+          Terms of Use
+        </a>.
+      </p>
     </form>
   );
 };

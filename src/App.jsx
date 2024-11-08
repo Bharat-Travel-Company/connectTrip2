@@ -48,61 +48,11 @@ const Modal = ({ isOpen, onClose }) => {
         </h2>
 
         {/* Form */}
-        <form className="space-y-4">
-          <input
-            type="text"
-            placeholder="Name"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600"
-          />
-          <input
-            type="tel"
-            placeholder="Phone"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600"
-          />
-          <input
-            type="text"
-            placeholder="Departure City"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600"
-          />
-          <select
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600"
-          >
-            <option value="">No of Traveler</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            {/* Add more options as needed */}
-          </select>
-          <textarea
-            placeholder="Special Requirement"
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-600"
-          ></textarea>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full bg-orange-600 text-white font-semibold py-3 rounded-md hover:bg-orange-700 transition"
-          >
-            Apply For Offer
-          </button>
-        </form>
-
+        <section>
+          <SignUpForm></SignUpForm>
+        </section>
         {/* Disclaimer */}
-        <p className="text-xs text-gray-500 mt-4 text-center">
-          By clicking on "Get Free Quote", you agree to our{" "}
-          <a href="#" className="text-orange-600 underline">
-            Privacy Policy
-          </a>{" "}
-          and{" "}
-          <a href="#" className="text-orange-600 underline">
-            Terms of Use
-          </a>.
-        </p>
+
       </div>
     </div>
   );

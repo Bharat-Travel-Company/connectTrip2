@@ -75,7 +75,7 @@ const SignUpForm = ({ selectedPackage }) => {
         className="w-full bg-orange-600 text-white font-semibold py-3 rounded-md hover:bg-orange-700 transition focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2"
         type="submit"
       >
-        Send me Quotes →
+        Apply For Offer
       </button>
 
       {/* Disclaimer */}

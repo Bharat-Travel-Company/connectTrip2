@@ -2,12 +2,14 @@ import { useState } from "react";
 import axios from "axios";
 
 const SignUpForm = ({ selectedPackage }) => {
+
+  const title = selectedPackage?.packageName
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
     numberOfMembers: "",
-    selectedPackage: selectedPackage,
+    selectedPackage: title,
   });
 
   const handleChange = (e) => {

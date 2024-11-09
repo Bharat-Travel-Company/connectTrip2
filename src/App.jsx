@@ -4,6 +4,7 @@ import SignUpForm from "./components/form"; // Excluded from lazy loading
 import WhatsAppButton from "./components/whatsApp";
 
 const PrivacyPolicy = lazy(() => import("./components/privacyPolicy"));
+const PaymentPolicy = lazy(() => import("./components/refundPolicy"));
 const TermsAndConditions = lazy(() => import("./components/termsAndConditions"));
 const MainHome = lazy(() => import("./pages/mainHome"));
 const Kashmir = lazy(() => import("./pages/Kashmir"));
@@ -43,9 +44,9 @@ const Modal = ({ isOpen, onClose }) => {
         </button>
 
         {/* Heading */}
-        <h2 className="text-center text-xl font-bold text-orange-600 mb-4">
+        {/* <h2 className="text-center text-xl font-bold text-orange-600 mb-4">
           Get Upto 30% OFF on Dubai Package
-        </h2>
+        </h2> */}
 
         {/* Form */}
         <section>
@@ -86,6 +87,7 @@ function App() {
               <Route path="/form" element={<SignUpForm />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+              <Route path="/refund-policy" element={<PaymentPolicy/>}/>
             </Routes>
           </Suspense>
         </div>

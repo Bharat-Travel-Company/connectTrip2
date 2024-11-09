@@ -4,6 +4,22 @@ import kashmir_3 from "../assets/kashmir/kashmir_3.jpg";
 import kashmir_4 from "../assets/kashmir/kashmir_4.jpg";
 import kashmir_5 from "../assets/kashmir/kashmir_5.jpg";
 import kashmir_6 from "../assets/kashmir/kashmir_6.jpg";
+import kashmir_7 from "../assets/kashmir/kashmir_7.jpg";
+import kashmir_8 from "../assets/kashmir/kashmir_8.jpg";
+import kashmir_9 from "../assets/kashmir/kashmir_9.jpg";
+import kashmir_10 from "../assets/kashmir/kashmir_10.jpg";
+import andaman_1 from "../assets/kashmir/andaman_1.jpg";
+import andaman_2 from "../assets/kashmir/andaman_2.jpg";
+import andaman_3 from "../assets/kashmir/andaman_3.jpg";
+import andaman_4 from "../assets/kashmir/andaman_4.jpg";
+import andaman_5 from "../assets/kashmir/andaman_5.jpg";
+import dubai_1 from "../assets/kashmir/dubai_1.jpg";
+import dubai_2 from "../assets/kashmir/dubai_2.jpg";
+import dubai_3 from "../assets/kashmir/dubai_3.jpg";
+import kerela_1 from "../assets/kashmir/kerela_1.jpg";
+import kerela_2 from "../assets/kashmir/kerela_2.jpg";
+import thailand_1 from "../assets/kashmir/thailand_1.jpg";
+import thailand_2 from "../assets/kashmir/thailand_2.jpg";
 
 
 import Dal_Lake from "../assets/kashmir/placeToVist/Dal_Lake.jpg";
@@ -114,7 +130,7 @@ export const kashmirPackages = [
       "Candle Light Dinner, Cake, Flower Decor",
       "All Taxes and Allowances",
     ],
-    image: kashmir_4,
+    image: kashmir_7,
     tag: "Newly Launched",
     stayDetails: [
       { day: "2D", location: "Srinagar" },
@@ -147,7 +163,7 @@ export const kashmirPackages = [
       "All Sightseeing and Transfer by Private Car",
       "All Taxes and Allowances",
     ],
-    image: kashmir_5,
+    image: kashmir_9,
     tag: null,
     stayDetails: [
       { day: "2D", location: "Katra" },
@@ -177,7 +193,7 @@ export const kashmirPackages = [
       "All Sightseeing and Transfer by Private Car",
       "All Taxes and Allowances",
     ],
-    image: kashmir_6,
+    image: kashmir_8,
     tag: null,
     stayDetails: [
       { day: "2D", location: "Katra" },
@@ -224,7 +240,7 @@ export const home = [
       "Full Day Sightseeing of Srinagar",
       "All Taxes and Allowances",
     ],
-    image: kashmir_1,
+    image: kashmir_8,
     tag: "Best Seller",
     stayDetails: [{ day: "3D", location: "Srinagar" }],
   },
@@ -250,7 +266,7 @@ export const home = [
       "Candle Light Dinner, Cake, Flower Decor",
       "All Taxes and Allowances",
     ],
-    image: "/antp.jfif",
+    image: andaman_2,
     tag: "Recommended",
     stayDetails: [
       { day: "3D", location: "Srinagar" },
@@ -314,7 +330,7 @@ export const home = [
       "All Sightseeing and Transfer by Private Car",
       "All Taxes and Allowances",
     ],
-    image: "/kp.jpg",
+    image: kerela_2,
     tag: null,
     stayDetails: [
       { day: "2D", location: "Katra" },
@@ -349,7 +365,7 @@ export const home = [
       "All Sightseeing and Transfer by Private Car",
       "All Taxes and Allowances",
     ],
-    image: "/dpme.jpg",
+    image: dubai_3,
     tag: null,
     stayDetails: [
       { day: "2D", location: "Katra" },
@@ -384,7 +400,7 @@ export const home = [
       "All Sightseeing and Transfer by Private Car",
       "All Taxes and Allowances",
     ],
-    image: "/tp.jfif",
+    image: thailand_1,
     tag: null,
     stayDetails: [
       { day: "2D", location: "Katra" },
@@ -411,7 +427,7 @@ export const andamanPackages = [
       "Meals",
       "Transfers",
     ],
-    image: "/antp.jfif",
+    image: andaman_4,
     tag: "Best Seller",
     stayDetails: [
       { day: "3D", location: "Port Blair" },
@@ -511,7 +527,7 @@ export const andamanPackages = [
       "Meals",
       "Transfers",
     ],
-    image: "/antp.jfif",
+    image: andaman_2,
     tag: "Group Special",
     stayDetails: [
       { day: "3D", location: "Port Blair" },
@@ -531,7 +547,7 @@ export const andamanPackages = [
       "Meals",
       "Transfers",
     ],
-    image: "/ahp.jfif",
+    image: andaman_5,
     tag: "Honeymoon Favorite",
     stayDetails: [
       { day: "3D", location: "Port Blair" },
@@ -551,7 +567,7 @@ export const andamanPackages = [
       "Meals",
       "Transfers",
     ],
-    image: "/ahtp.jpg",
+    image: andaman_1,
     tag: "Holiday Special",
     stayDetails: [
       { day: "4D", location: "Port Blair" },
@@ -571,7 +587,7 @@ export const andamanPackages = [
       "Meals",
       "Transfers",
     ],
-    image: "/antp.jfif",
+    image: andaman_3,
     tag: "Budget Friendly",
     stayDetails: [
       { day: "5D", location: "Port Blair" },
@@ -790,7 +806,7 @@ export const himachalPackages = [
     originalPrice: "₹ 6,999",
     discountedPrice: "₹ 5,399",
     discount: "23% OFF",
-    image: "/shimla.jfif",
+    image: kashmir_7,
     inclusions: [
       "Hotels",
       "Meals",
@@ -876,7 +892,7 @@ export const himachalPackages = [
     originalPrice: "₹ 25,999",
     discountedPrice: "₹ 19,999",
     discount: "23% OFF",
-    image: "/shimladal.jfif",
+    image: kashmir_8,
     inclusions: [
       "Hotels",
       "Meals",
@@ -897,7 +913,7 @@ export const himachalPackages = [
     originalPrice: "₹ 10,999",
     discountedPrice: "₹ 8,999",
     discount: "18% OFF",
-    image: "/jib.jfif",
+    image: kashmir_5,
     inclusions: [
       "Hotels",
       "Meals",
@@ -965,7 +981,7 @@ export const dubaiPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Best Seller",
-    image: "/dp.jfif",
+    image: dubai_1,
     stayDetails: [
       { day: "3D", location: "Dubai" },
       { day: "3D", location: "Abu Dhabi" },
@@ -1004,7 +1020,7 @@ export const dubaiPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Trending",
-    image: "/dp3.jpg",
+    image: dubai_2,
     stayDetails: [{ day: "5D", location: "Dubai" }],
   },
   {
@@ -1023,7 +1039,7 @@ export const dubaiPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Group Tour",
-    image: "/dp4.jfif",
+    image: dubai_1,
     stayDetails: [
       { day: "4D", location: "Dubai" },
       { day: "3D", location: "Abu Dhabi" },
@@ -1062,7 +1078,7 @@ export const dubaiPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Family Special",
-    image: "/dp.jfif",
+    image: dubai_3,
     stayDetails: [{ day: "7D", location: "Dubai" }],
   },
 ];
@@ -1085,7 +1101,7 @@ export const thailandPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Best Seller",
-    image: "/tp.jfif",
+    image: thailand_1,
     stayDetails: [
       { day: "2D", location: "Krabi" },
       { day: "4D", location: "Phuket" },
@@ -1108,7 +1124,7 @@ export const thailandPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Group Tour",
-    image: "/tp2.jpg",
+    image: thailand_2,
     stayDetails: [
       { day: "2D", location: "Phuket" },
       { day: "2D", location: "Phi Phi" },
@@ -1156,7 +1172,7 @@ export const thailandPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Recommended",
-    image: "/tp4.jpg",
+    image: thailand_1,
     stayDetails: [
       { day: "2D", location: "Bangkok" },
       { day: "2D", location: "Krabi" },
@@ -1202,7 +1218,7 @@ export const thailandPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Adventure",
-    image: "/tp2.jpg",
+    image: thailand_1,
     stayDetails: [
       { day: "2D", location: "Hanoi" },
       { day: "1D", location: "Halong Bay" },

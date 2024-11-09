@@ -5,6 +5,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 
+
 import { FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
@@ -25,9 +26,10 @@ const Footer = () => {
       <strong className="mx-auto text-[#F97300]">
       <Link to="/privacy-policy" style={styles.footerLink}>Privacy Policy</Link>
       <Link to="/terms-and-conditions" style={styles.footerLink}>Terms & Conditions</Link>
+      <Link to="/refund-policy" style={styles.footerLink}>Refund Policy</Link>
       </strong>
       <strong className="mx-auto text-[#F97300] mb-5">
-        © 2024 Copyright: <a href="https://himachaltourpackages.shop">www.himachaltourpackages.shop</a>
+        © 2024 Copyright: <a href="https://connecttrip.in">www.connecttrip.in</a>
       </strong>
     </footer>
   );

@@ -25,7 +25,7 @@ const TourContact = ({title}) => {
     if (!email && !username && !phone && !destination) alert("Please fill all fields");
     axios
       .put(
-        `https://tourplanerbackend.onrender.com/send-email`,
+        import.meta.env.VITE_FORM_URL,
         formData
       )
       .then((res) => {

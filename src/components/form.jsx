@@ -25,7 +25,7 @@ const SignUpForm = ({ selectedPackage }) => {
     console.log(formData);
     if (!email && !name && !phone) alert("Please fill all fields");
     axios
-      .post(`https://tourplanerbackend.onrender.com/send-email`, formData)
+      .post(import.meta.env.VITE_FORM_URL, formData)
       .then((res) => {
         if (res.data.message === "Form submitted successfully") {
           alert("Contact Form submitted");

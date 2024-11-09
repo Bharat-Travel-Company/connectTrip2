@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { home, kashmirPackages } from "../data/packagesData";
 import { WiStars } from "react-icons/wi";
 import { FaTag } from "react-icons/fa6";
-import { placesToVisit } from "../data/packagesData";
+
 const Card = ({
   image,
   duration,

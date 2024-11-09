@@ -7,7 +7,6 @@ import kashmir_6 from "../assets/kashmir/kashmir_6-min.jpg";
 import kashmir_7 from "../assets/kashmir/kashmir_7-min.jpg";
 import kashmir_8 from "../assets/kashmir/kashmir_8-min.jpg";
 import kashmir_9 from "../assets/kashmir/kashmir_9-min.jpg";
-import kashmir_10 from "../assets/kashmir/kashmir_10-min.jpg";
 import andaman_1 from "../assets/kashmir/andaman_1-min.jpg";
 import andaman_2 from "../assets/kashmir/andaman_2-min.jpg";
 import andaman_3 from "../assets/kashmir/andaman_3-min.jpg";
@@ -16,16 +15,10 @@ import andaman_5 from "../assets/kashmir/andaman_5-min.jpg";
 import dubai_1 from "../assets/kashmir/dubai_1-min.jpg";
 import dubai_2 from "../assets/kashmir/dubai_2-min.jpg";
 import dubai_3 from "../assets/kashmir/dubai_3-min.jpg";
-import kerela_1 from "../assets/kashmir/kerela_1-min.jpg";
 import kerela_2 from "../assets/kashmir/kerela_2-min.jpg";
 import thailand_1 from "../assets/kashmir/thailand_1-min.jpg";
 import thailand_2 from "../assets/kashmir/thailand_2.jpg";
-import user from "../assets/kashmir/user.png"
 
-
-import Dal_Lake from "../assets/kashmir/placeToVist/Dal_Lake.jpg";
-import Pahalgram from "../assets/kashmir/placeToVist/Pahalgam.jpg";
-import Vashanio_Devi from "../assets/kashmir/placeToVist/Vashanio_Devi.jpg";
 
 export const kashmirPackages = [
   {
@@ -200,22 +193,6 @@ export const kashmirPackages = [
       { day: "2D", location: "Katra" },
       { day: "2D", location: "Patnitop" },
     ],
-  },
-];
-
-
-export const placesToVisit = [
-  {
-    name: "Dal Lake",
-    image: Dal_Lake,
-  },
-  {
-    name: "Vashanio_Devi",
-    image: Vashanio_Devi,
-  },
-  {
-    name: "Pahalgram",
-    image: Pahalgram,
   },
 ];
 
@@ -1250,4 +1227,6 @@ export const testimonials = [
     text: "An absolutely fantastic experience! From start to finish, the team made everything easy and fun. The tour package had great inclusions, and I met some wonderful people. Can't wait for my next trip with them!",
     author: "Divyanshu Sahu",
     image: "https://media.licdn.com/dms/image/v2/D4D03AQFICA1Lsmu6cQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1721206321631?e=1736380800&v=beta&t=2k2qqus7_ARQEjXNEplGRvjRPnToOzLKZC4e9pPh-xk" // replace with royalty-free image URL
-  }]
+  }];
+
+  

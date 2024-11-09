@@ -7,7 +7,7 @@ import Footer from "../components/footer";
 import { dubaiPackages, himachalPackages, kashmirPackages, thailandPackages, testimonials } from "../data/packagesData";
 import { WiStars } from "react-icons/wi";
 import { FaTag, FaPhone } from "react-icons/fa6";
-import { placesToVisit } from "../data/packagesData";
+
 import { useState } from "react";
 
 const Modal = ({ onClose, selectedPackage }) => {

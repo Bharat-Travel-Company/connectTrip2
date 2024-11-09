@@ -20,6 +20,7 @@ import kerela_1 from "../assets/kashmir/kerela_1-min.jpg";
 import kerela_2 from "../assets/kashmir/kerela_2-min.jpg";
 import thailand_1 from "../assets/kashmir/thailand_1-min.jpg";
 import thailand_2 from "../assets/kashmir/thailand_2.jpg";
+import user from "../assets/kashmir/user.png"
 
 
 import Dal_Lake from "../assets/kashmir/placeToVist/Dal_Lake.jpg";
@@ -1232,3 +1233,21 @@ export const thailandPackages = [
   },
 ];
 
+
+
+export const testimonials = [
+  {
+    text: "Our trip to Thailand was incredible! Every detail was perfectly arranged, from the beautiful hotels to the knowledgeable guides. I felt so cared for, and we had the best time exploring the islands. Highly recommended!",
+    author: "Ayush Talesara",
+    image: "https://media.licdn.com/dms/image/v2/D5635AQEIKfvbsGor0Q/profile-framedphoto-shrink_100_100/profile-framedphoto-shrink_100_100/0/1719451765219?e=1731776400&v=beta&t=BPeSB9Jrjilzk2vJHMAqw7BASoXvVVcXdGBrPrirUZQ" // replace with royalty-free image URL
+  },
+  {
+    text: "The Rajasthan tour exceeded all my expectations. The itinerary covered everything I wanted to see, and our guide was amazing. From camel rides in the desert to visiting historic palaces, this trip was unforgettable!",
+    author: "Jatin Vashishtha",
+    image: "https://media.licdn.com/dms/image/v2/D4D03AQFiC9p1YL7oWA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1711932297990?e=1736380800&v=beta&t=WELVVYxsco4rWnjyDOlAbTB_Xs9RackHw4XRAsadsCA" // replace with royalty-free image URL
+  },
+  {
+    text: "An absolutely fantastic experience! From start to finish, the team made everything easy and fun. The tour package had great inclusions, and I met some wonderful people. Can't wait for my next trip with them!",
+    author: "Divyanshu Sahu",
+    image: "https://media.licdn.com/dms/image/v2/D4D03AQFICA1Lsmu6cQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1721206321631?e=1736380800&v=beta&t=2k2qqus7_ARQEjXNEplGRvjRPnToOzLKZC4e9pPh-xk" // replace with royalty-free image URL
+  }]

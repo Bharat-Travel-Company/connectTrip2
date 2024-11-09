@@ -4,7 +4,7 @@ import FAQSection from "../components/faq";
 import SalesBanner from "../components/banner";
 import SignUpForm from "../components/form";
 import Footer from "../components/footer";
-import { kashmirPackages } from "../data/packagesData";
+import { kashmirPackages, testimonials } from "../data/packagesData";
 import { WiStars } from "react-icons/wi";
 import { FaTag, FaPhone } from "react-icons/fa6";
 import { placesToVisit } from "../data/packagesData";
@@ -115,15 +115,12 @@ const Card = ({
   );
 };
 
-const PlaceToVisitCard = ({ image, name }) => {
+const TestimonialCard = ({ testimonial, author, image }) => {
   return (
-    <div className="aspect-square rounded-lg overflow-hidden relative hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] hover:shadow-[#f37002] transition-shadow duration-300">
-      <img src={image} alt={name} className="w-full h-full object-cover" />
-      <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
-        <p className="text-white text-3xl font-bold border-b-2 border-image-source:linear-gradient(90deg,var(--primary-color,#f37002)_0,#faa21a_98.47%) border-image-slice:1">
-          {name}
-        </p>
-      </div>
+    <div className="rounded-xl flex flex-col items-center p-4 bg-white shadow-lg">
+      <img src={image} alt={author} className="w-16 h-16 rounded-full mb-4" />
+      <p className="text-gray-700 italic">"{testimonial}"</p>
+      <p className="text-gray-900 font-semibold mt-2">- {author}</p>
     </div>
   );
 };
@@ -179,11 +176,12 @@ const Kashmir = () => {
             </p>
           </div>
           <div className="max-w-[1200px] w-full px-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-            {placesToVisit.map((place, index) => (
-              <PlaceToVisitCard
+          {testimonials.map((testimonial, index) => (
+              <TestimonialCard
                 key={index}
-                image={place.image}
-                name={place.name}
+                testimonial={testimonial.text}
+                author={testimonial.author}
+                image={testimonial.image}
               />
             ))}
           </div>

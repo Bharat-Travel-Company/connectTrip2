@@ -4,10 +4,9 @@ import FAQSection from "../components/faq";
 import SalesBanner from "../components/banner";
 import SignUpForm from "../components/form";
 import Footer from "../components/footer";
-import { dubaiPackages, himachalPackages, kashmirPackages, keralaPackages, thailandPackages } from "../data/packagesData";
+import { dubaiPackages, himachalPackages, kashmirPackages, keralaPackages, thailandPackages, testimonials } from "../data/packagesData";
 import { WiStars } from "react-icons/wi";
 import { FaTag, FaPhone } from "react-icons/fa6";
-import { placesToVisit } from "../data/packagesData";
 import { useState } from "react";
 
 const Modal = ({ onClose, selectedPackage }) => {
@@ -27,6 +26,7 @@ const Modal = ({ onClose, selectedPackage }) => {
     </div>
   );
 };
+
 const Card = ({
   image,
   duration,
@@ -38,15 +38,14 @@ const Card = ({
   stayDetails,
   handleModalOpen,
 }) => {
-   const handleCall = () => {
-     //to open in same tab
-     // window.location.href = "tel:+91-963-010-7798";
-     window.open("tel:+91-963-010-7798", "_blank");
-   };
+  const handleCall = () => {
+    window.open("tel:+91-963-010-7798", "_blank");
+  };
+  
   return (
     <div className="rounded-xl flex flex-col w-full gap-2 shadow-lg transition-shadow duration-300">
-      <div className=" w-full h-72 relative rounded-xl overflow-hidden">
-        <div className=" absolute right-0 top-0 rounded-bl-lg bg-[#f57725] text-white px-2.5">
+      <div className="w-full h-72 relative rounded-xl overflow-hidden">
+        <div className="absolute right-0 top-0 rounded-bl-lg bg-[#f57725] text-white px-2.5">
           {discount}
         </div>
         <img
@@ -87,7 +86,7 @@ const Card = ({
           <span className="text-lg font-bold text-green-600">
             {discountedPrice}
           </span>
-          <span className=" text-gray-500 line-through">{originalPrice}</span>
+          <span className="text-gray-500 line-through">{originalPrice}</span>
           <span className="text-sm font-semibold text-green-600 bg-green-100 px-2">
             SAVE ₹
             {(
@@ -115,15 +114,12 @@ const Card = ({
   );
 };
 
-const PlaceToVisitCard = ({ image, name }) => {
+const TestimonialCard = ({ testimonial, author, image }) => {
   return (
-    <div className="aspect-square rounded-lg overflow-hidden relative hover:shadow-[0_3px_10px_rgb(0,0,0,0.2)] hover:shadow-[#f37002] transition-shadow duration-300">
-      <img src={image} alt={name} className="w-full h-full object-cover" />
-      <div className="absolute bottom-0 p-4 bg-gradient-to-t from-black to-transparent w-full">
-        <p className="text-white text-3xl font-bold border-b-2 border-image-source:linear-gradient(90deg,var(--primary-color,#f37002)_0,#faa21a_98.47%) border-image-slice:1">
-          {name}
-        </p>
-      </div>
+    <div className="rounded-xl flex flex-col items-center p-4 bg-white shadow-lg">
+      <img src={image} alt={author} className="w-16 h-16 rounded-full mb-4" />
+      <p className="text-gray-700 italic">"{testimonial}"</p>
+      <p className="text-gray-900 font-semibold mt-2">- {author}</p>
     </div>
   );
 };
@@ -172,18 +168,19 @@ const Kerala = () => {
         <section className="flex items-center justify-center flex-col py-16 max-w-[1200px] w-full">
           <div className="w-full pl-4 mb-4 space-y-0.5">
             <h1 className="text-2xl font-semibold text-[#fcaf17] w-full text-start flex">
-              Place To Visit <WiStars className="text-[#f57725]" />
+              Testimonials <WiStars className="text-[#f57725]" />
             </h1>
             <p className="text-start w-full text-gray-700 font-semibold">
-              Best Places That Make Your Trip Memorable
+              See what our customers have to say
             </p>
           </div>
           <div className="max-w-[1200px] w-full px-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
-            {placesToVisit.map((place, index) => (
-              <PlaceToVisitCard
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard
                 key={index}
-                image={place.image}
-                name={place.name}
+                testimonial={testimonial.text}
+                author={testimonial.author}
+                image={testimonial.image}
               />
             ))}
           </div>

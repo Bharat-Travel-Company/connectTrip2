@@ -24,8 +24,8 @@ export const kashmirPackages = [
   {
     packageName: "Kashmir Short Trip",
     duration: "03 Nights & 04 Days",
-    originalPrice: "₹ 9,332",
-    discountedPrice: "₹ 6,999",
+    originalPrice: "₹ 12,332",
+    discountedPrice: "₹ 10,999",
     discount: "25% OFF",
     inclusions: [
       "Hotels",
@@ -47,8 +47,8 @@ export const kashmirPackages = [
   {
     packageName: "Kashmir Honeymoon Tour Package",
     duration: "04 Nights & 05 Days",
-    originalPrice: "₹ 14,665",
-    discountedPrice: "₹ 10,999",
+    originalPrice: "₹ 17,665",
+    discountedPrice: "₹ 13,999",
     discount: "25% OFF",
     inclusions: [
       "Hotels",
@@ -76,7 +76,7 @@ export const kashmirPackages = [
     packageName: "Beauty of Kashmir Package",
     duration: "05 Nights & 06 Days",
     originalPrice: "₹ 21,332",
-    discountedPrice: "₹ 15,999",
+    discountedPrice: "₹ 18,999",
     discount: "25% OFF",
     inclusions: [
       "Hotels",

@@ -14,6 +14,7 @@ const Andaman = lazy(() => import("./pages/Andaman"));
 const Dubai = lazy(() => import("./pages/Dubai"));
 const Thailand = lazy(() => import("./pages/Thailand"));
 const Tour = lazy(() => import("./pages/tour"));
+const ThankYouPage = lazy(() => import("./components/thankyouPage"));
 
 const Modal = ({ isOpen, onClose }) => {
   useEffect(() => {
@@ -67,12 +68,13 @@ function App() {
 
   return (
     <>
+    <Router>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       {/* <TruecallerButton></TruecallerButton> */}
 
       <WhatsAppButton></WhatsAppButton>
 
-      <Router>
+      
         <div className="w-full h-full">
         <Suspense fallback={<div>Loading...</div>}>
             <Routes>
@@ -88,6 +90,7 @@ function App() {
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
               <Route path="/refund-policy" element={<PaymentPolicy/>}/>
+              <Route path="/thank-you" element={<ThankYouPage />} />
             </Routes>
           </Suspense>
         </div>

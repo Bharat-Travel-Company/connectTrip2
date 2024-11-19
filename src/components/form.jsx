@@ -1,8 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SignUpForm = ({ selectedPackage }) => {
-
+  
+  const navigate = useNavigate();
   const title = selectedPackage?.packageName
   const [formData, setFormData] = useState({
     name: "",
@@ -26,11 +28,13 @@ const SignUpForm = ({ selectedPackage }) => {
     const { name, phone, email, numberOfMembers, selectedPackage } = formData;
     console.log(formData);
     if (!email && !name && !phone) alert("Please fill all fields");
+    
     axios
       .post(import.meta.env.VITE_FORM_URL, formData)
       .then((res) => {
         if (res.data.message === "Form submitted successfully") {
-          alert("Contact Form submitted");
+          // alert("Contact Form submitted");
+          navigate("/thank-you");
         } else {
           alert(res.data.message);
         }
@@ -76,6 +80,7 @@ const SignUpForm = ({ selectedPackage }) => {
       <button
         className="w-full bg-orange-600 text-white font-semibold py-3 rounded-md hover:bg-orange-700 transition focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2"
         type="submit"
+    
       >
         Apply For Offer
       </button>

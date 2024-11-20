@@ -14,6 +14,7 @@ const Andaman = lazy(() => import("./pages/Andaman"));
 const Dubai = lazy(() => import("./pages/Dubai"));
 const Thailand = lazy(() => import("./pages/Thailand"));
 const Tour = lazy(() => import("./pages/tour"));
+const Thankyou = lazy(()=> import('./pages/thankyou.jsx'))
 
 const Modal = ({ isOpen, onClose }) => {
   useEffect(() => {
@@ -88,6 +89,7 @@ function App() {
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
               <Route path="/refund-policy" element={<PaymentPolicy/>}/>
+              <Route path="/thankyou" element={<Thankyou />} />
             </Routes>
           </Suspense>
         </div>

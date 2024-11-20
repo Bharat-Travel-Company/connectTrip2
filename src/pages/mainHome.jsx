@@ -27,6 +27,17 @@ const Card = ({
           {discount}
         </div>
         <img
+            fetchpriority="high"
+          loading="lazy"
+           decoding="async"
+          srcSet={`${image}?width=100 100w, 
+           ${image}?width=200 200w, 
+           ${image}?width=400 400w, 
+           ${image}?width=800 800w`}
+  sizes="(max-width: 100px) 100w,
+         (max-width: 200px) 200w,
+         (max-width: 400px) 400w,
+         (max-width: 800px) 800w"
           src={image}
           alt={packageName}
           className="w-full h-full object-cover rounded-t-xl aspect-square"
@@ -52,10 +63,10 @@ const Card = ({
             {originalPrice}
           </span>
         </div>
-        <div className="">  
-            <button className="w-full  bg-[#f37002] text-white font-semibold py-2 rounded-lg my-2 ">
-             Avail This Offers
-            </button>
+        <div className="">
+          <button className="w-full  bg-[#f37002] text-white font-semibold py-2 rounded-lg my-2 ">
+            Avail This Offers
+          </button>
         </div>
       </div>
     </div>
@@ -86,9 +97,9 @@ const MainHome = () => {
         <div className="max-w-[1200px] w-full px-4 grid lg:grid-cols-3 md:grid-cols-2  grid-cols-1 gap-4">
           {home.map((pkg, index) => (
             <Link key={index}
-            to={pkg.url}>
+              to={pkg.url}>
               <Card
-                
+
                 image={pkg.image}
                 duration={pkg.duration}
                 discount={pkg.discount}
@@ -98,7 +109,7 @@ const MainHome = () => {
                 tag={pkg.tag}
                 packageName={pkg.packageName}
                 stayDetails={pkg.stayDetails}
-              
+
               ></Card>
             </Link>
           ))}

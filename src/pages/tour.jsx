@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { FaClock, FaBus, FaUtensils, FaSuitcaseRolling } from "react-icons/fa6";
-import Navbar from "../components/navbar";  
+import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import TourContact from "../components/tourContact"
 
@@ -116,6 +116,17 @@ const Tour = () => {
       <div className="relative w-full md:h-[calc(100vh-8rem)] h-[380px] overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <img
+            loading="lazy"
+                fetchpriority="high"
+            decoding="async"
+            srcSet={`${tourPackage?.imgSrc}?width=100 100w, 
+           ${tourPackage?.imgSrc}?width=200 200w, 
+           ${tourPackage?.imgSrc}?width=400 400w, 
+           ${tourPackage?.imgSrc}?width=800 800w`}
+            sizes="(max-width: 100px) 100w,
+         (max-width: 200px) 200w,
+         (max-width: 400px) 400w,
+         (max-width: 800px) 800w"
             className="w-full h-full object-cover"
             src={tourPackage?.imgSrc}
             alt="Tour"

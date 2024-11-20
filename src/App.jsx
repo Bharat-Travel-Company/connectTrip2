@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { useState, useEffect, Suspense, lazy } from "react";
 import SignUpForm from "./components/form"; // Excluded from lazy loading
 import WhatsAppButton from "./components/whatsApp";
@@ -64,12 +64,22 @@ const Modal = ({ isOpen, onClose }) => {
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
+  return (
+    <Router>
+      <RouterContent isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+    </Router>
+  );
+}
 
+function RouterContent({ isModalOpen, setIsModalOpen }) {
+  const location = useLocation(); 
+  const showModal = location.pathname === "/" // Show modal only on the home page
 
   return (
     <>
-    <Router>
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {showModal && (<Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      )}
+
       {/* <TruecallerButton></TruecallerButton> */}
 
       <WhatsAppButton></WhatsAppButton>
@@ -94,7 +104,6 @@ function App() {
             </Routes>
           </Suspense>
         </div>
-      </Router>
     
     </>
   );

@@ -13,6 +13,7 @@ const SignUpForm = ({ selectedPackage }) => {
     numberOfMembers: "",
     selectedPackage: title,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false); //Track the submission status
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,17 +28,39 @@ const SignUpForm = ({ selectedPackage }) => {
 
     const { name, phone, email, numberOfMembers, selectedPackage } = formData;
     console.log(formData);
-    if (!email && !name && !phone) alert("Please fill all fields");
-    
+    if (!email && !name && !phone){
+      alert("Please fill all fields");
+      return;
+    } 
+    setIsSubmitting(true);  //Show loading state
+
     axios
-      .post(import.meta.env.VITE_FORM_URL, formData)
+      .post(`${import.meta.env.VITE_FORM_URL}/userDetails`, formData)
       .then((res) => {
         if (res.data.message === "Form submitted successfully") {
-          // alert("Contact Form submitted");
+          setFormData({
+            name: "",
+            phone: "",
+            email: "",
+            numberOfMembers: "",
+            selectedPackage: title,
+          }); // Reset the form data
           navigate("/thank-you");
         } else {
           alert(res.data.message);
         }
+      })
+      .catch((err) => {
+        if (err.response && err.response.data && err.response.data.message) {
+          // Show the backend's error message
+          alert(err.response.data.message);
+        } else {
+          // Show a generic error message for unexpected errors
+          alert("An error occurred. Please try again.");
+        }
+      })
+      .finally(() => {
+        setIsSubmitting(false); //Reset the loading
       });
   };
 
@@ -87,7 +110,7 @@ const SignUpForm = ({ selectedPackage }) => {
 
       {/* Disclaimer */}
       <p className="text-xs text-gray-500 mt-4 text-center">
-        By clicking on "Submit", you agree to our{" "}
+        By clicking on &quot;Submit&quot;, you agree to our{" "}
         <a href="#" className="text-orange-600 underline">
           Privacy Policy
         </a>{" "}

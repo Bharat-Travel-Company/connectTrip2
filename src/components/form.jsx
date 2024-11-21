@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const SignUpForm = ({ selectedPackage }) => {
 
@@ -11,6 +12,12 @@ const SignUpForm = ({ selectedPackage }) => {
     numberOfMembers: "",
     selectedPackage: title,
   });
+
+  // ReCaptcha verification
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const verifyCallback = (response) => {
+    setCaptchaVerified(response);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -55,8 +62,8 @@ const SignUpForm = ({ selectedPackage }) => {
               field === "email"
                 ? "email"
                 : field === "numberOfMembers"
-                ? "number"
-                : "text"
+                  ? "number"
+                  : "text"
             }
             id={field}
             name={field}
@@ -64,13 +71,19 @@ const SignUpForm = ({ selectedPackage }) => {
             min={0}
             onChange={handleChange}
             className="w-full bg-white text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600"
-            placeholder={`${
-              field.charAt(0).toUpperCase() + field.slice(1).replace(/([A-Z])/g, " $1")
-            }`}
+            placeholder={`${field.charAt(0).toUpperCase() + field.slice(1).replace(/([A-Z])/g, " $1")
+              }`}
             required
           />
         </div>
       ))}
+
+      <div className="flex justify-center">
+        <ReCAPTCHA
+          sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+          onChange={verifyCallback}
+        />
+      </div>
 
       {/* Submit Button */}
       <button

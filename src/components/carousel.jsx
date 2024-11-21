@@ -12,6 +12,7 @@ const Carousel = ({ data }) => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
   };
   useEffect(() => {
+    
     const interval = setInterval(() => {
       nextImage();
     }, 5000);

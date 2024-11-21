@@ -1,7 +1,10 @@
+import React from "react";
 import { FaPhone } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
-const Navbar = () => {
+const Navbar =React.memo(() => {
+  console.log("navbar");
+  
   const handleCall = () => {
     //to open in same tab
     // window.location.href = "tel:+91-963-010-7798";
@@ -50,6 +53,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
+});
 
 export default Navbar;

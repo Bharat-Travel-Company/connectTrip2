@@ -1,3 +1,4 @@
+import React from "react";
 import Navbar from "../components/navbar";
 import Carousel from "../components/carousel";
 import FAQSection from "../components/faq";
@@ -9,7 +10,7 @@ import { home, kashmirPackages } from "../data/packagesData";
 import { WiStars } from "react-icons/wi";
 import { FaTag } from "react-icons/fa6";
 
-const Card = ({
+const Card = React.memo(({
   image,
   duration,
   originalPrice,
@@ -20,6 +21,8 @@ const Card = ({
   packageName,
   stayDetails,
 }) => {
+  console.log("rendering card...");
+  
   return (
     <div className="rounded-xl flex flex-col w-full gap-2 shadow-lg transition-shadow duration-300">
       <div className=" w-full h-72 relative rounded-xl overflow-hidden">
@@ -60,7 +63,7 @@ const Card = ({
       </div>
     </div>
   );
-};
+});
 
 
 const MainHome = () => {

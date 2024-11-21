@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import { useState, useEffect, Suspense, lazy } from "react";
 import SignUpForm from "./components/form"; // Excluded from lazy loading
 import WhatsAppButton from "./components/whatsApp";
@@ -14,6 +14,7 @@ const Andaman = lazy(() => import("./pages/Andaman"));
 const Dubai = lazy(() => import("./pages/Dubai"));
 const Thailand = lazy(() => import("./pages/Thailand"));
 const Tour = lazy(() => import("./pages/tour"));
+const ThankYouPage = lazy(() => import("./components/thankyouPage"));
 
 const Modal = ({ isOpen, onClose }) => {
   useEffect(() => {
@@ -63,16 +64,27 @@ const Modal = ({ isOpen, onClose }) => {
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(true);
 
+  return (
+    <Router>
+      <RouterContent isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+    </Router>
+  );
+}
 
+function RouterContent({ isModalOpen, setIsModalOpen }) {
+  const location = useLocation(); 
+  const showModal = location.pathname === "/" // Show modal only on the home page
 
   return (
     <>
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {showModal && (<Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      )}
+
       {/* <TruecallerButton></TruecallerButton> */}
 
       <WhatsAppButton></WhatsAppButton>
 
-      <Router>
+      
         <div className="w-full h-full">
         <Suspense fallback={<div>Loading...</div>}>
             <Routes>
@@ -88,10 +100,10 @@ function App() {
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
               <Route path="/refund-policy" element={<PaymentPolicy/>}/>
+              <Route path="/thank-you" element={<ThankYouPage />} />
             </Routes>
           </Suspense>
         </div>
-      </Router>
     
     </>
   );

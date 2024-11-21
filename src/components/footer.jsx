@@ -12,7 +12,9 @@ const Footer = () => {
     <footer className="w-full bg-[#E2DFD0] flex flex-col items-center justify-center gap-5">
       <div className='flex justify-center items-center pt-10'>
         <h1 className='hidden md:block justify-center items-center'>__________________________________________________________</h1>
-        <img src={logo} alt="" />       
+        <img src={logo} alt="Logo" 
+        width="190" height="80"
+        />       
         <h1 className='hidden md:block justify-center items-center'>__________________________________________________________</h1>
 
       </div>

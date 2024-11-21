@@ -14,7 +14,7 @@ const Andaman = lazy(() => import("./pages/Andaman"));
 const Dubai = lazy(() => import("./pages/Dubai"));
 const Thailand = lazy(() => import("./pages/Thailand"));
 const Tour = lazy(() => import("./pages/tour"));
-
+const ThankYou = lazy(() => import("./components/thankyouPage"));
 const Modal = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (isOpen) {
@@ -99,6 +99,7 @@ function RouterContent({ isModalOpen, setIsModalOpen }) {
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
               <Route path="/refund-policy" element={<PaymentPolicy/>}/>
+              <Route path="//thank-you" element={<ThankYou />} />
             </Routes>
           </Suspense>
         </div>

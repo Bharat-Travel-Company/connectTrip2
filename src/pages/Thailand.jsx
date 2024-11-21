@@ -49,7 +49,7 @@ const Card = ({
           {discount}
         </div>
         <img
-            fetchpriority="high"
+            fetchPriority="high"
           loading="lazy"
            decoding="async"
           srcSet={`${image}?width=100 100w, 
@@ -141,7 +141,7 @@ const TestimonialCard = ({ testimonial, author, image }) => {
          (max-width: 200px) 200w,
          (max-width: 400px) 400w,
          (max-width: 800px) 800w"
-          fetchpriority="high"
+          fetchPriority="high"
         src={image}
         alt={author}
         className="w-16 h-16 rounded-full mb-4" />

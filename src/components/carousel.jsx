@@ -25,7 +25,7 @@ const Carousel = ({ data }) => {
       <div className="absolute inset-0 w-full h-full ">
         <img
           loading="lazy"
-              fetchpriority="high"
+              fetchPriority="high"
           srcSet={`${data[currentIndex].image}?width=100 100w, 
            ${data[currentIndex].image}?width=200 200w, 
            ${data[currentIndex].image}?width=400 400w, 

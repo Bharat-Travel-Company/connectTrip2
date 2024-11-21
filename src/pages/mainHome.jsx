@@ -27,7 +27,7 @@ const Card = ({
           {discount}
         </div>
         <img
-            fetchpriority="high"
+            fetchPriority="high"
           loading="lazy"
            decoding="async"
           srcSet={`${image}?width=100 100w, 
@@ -77,9 +77,9 @@ const Card = ({
 const MainHome = () => {
   const navigate = useNavigate(); // Initialize navigate
 
-  const handleBookNow = (pkg) => {
-    navigate("/tour", { state: { package: pkg } }); // Pass package data
-  };
+  // const handleBookNow = (pkg) => {
+  //   navigate("/tour", { state: { package: pkg } }); // Pass package data
+  // };
 
   return (
     <div className="flex flex-col items-center justify-center w-full">

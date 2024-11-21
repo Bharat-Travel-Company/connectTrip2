@@ -50,7 +50,7 @@ const Card = ({
         </div>
         <img
           loading="lazy"
-            fetchpriority="high"
+            fetchPriority="high"
           srcSet={`${image}?width=100 100w, 
            ${image}?width=200 200w, 
            ${image}?width=400 400w, 
@@ -127,7 +127,9 @@ const Card = ({
 const TestimonialCard = ({ testimonial, author, image }) => {
   return (
     <div className="rounded-xl flex flex-col items-center p-4 bg-white shadow-lg">
-      <img loading="lazy"   fetchpriority="high"  decoding="async" srcSet={`${image}?width=100 100w, 
+      <img loading="lazy"   fetchPriority="high"  decoding="async" 
+      srcSet={`
+           ${image}?width=100 100w, 
            ${image}?width=200 200w, 
            ${image}?width=400 400w, 
            ${image}?width=800 800w`}

@@ -16,7 +16,6 @@ const Thailand = lazy(() => import("./pages/Thailand"));
 const Tour = lazy(() => import("./pages/tour"));
 const ThankYou = lazy(() => import("./components/thankyouPage"));
 const PaymentPages = lazy(() => import("./pages/paymentpage"));
-
 const Modal = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (isOpen) {

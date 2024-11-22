@@ -17,10 +17,10 @@ const ThankYouPage = () => {
       ></div>
 
       {/* Top-left orange triangle */}
-      <div className="absolute top-0 left-0 w-0 h-0 border-t-[80px] sm:border-t-[120px] md:border-t-[180px] border-t-orange-600 border-r-[80px] sm:border-r-[120px] md:border-r-[180px] border-r-transparent"></div>
+      <div className="absolute top-0 left-0 w-0 h-0 border-t-[80px] sm:border-t-[120px] md:border-t-[180px] border-t-orange-600 border-r-                                                                                                                                                                                                                                                                                  [80px] sm:border-r-[120px] md:border-r-[180px] border-r-transparent"></div>
 
       {/* Bottom-right black triangle */}
-      <div className="absolute bottom-0 right-0 w-0 h-0 border-b-[80px] sm:border-b-[120px] md:border-b-[180px] border-b-black border-l-[80px] sm:border-l-[120px] md:border-l-[180px] border-l-transparent"></div>
+      <div className="absolute bottom-0 right-0 w-0 h-0 border-b-[80px] sm:border-b-[120px] md:border-b-[180px] border-b-black border-l-[                                                                                                                                                                                                                                                                                  80px] sm:border-l-[120px] md:border-l-[180px] border-l-transparent"></div>
 
       {/* Logo */}
       <div className="absolute top-[20px] sm:top-[30px] left-[50px] sm:left-[100px] md:left-[145px] bg-white bg-opacity-50 rounded">
@@ -31,23 +31,32 @@ const ThankYouPage = () => {
         />
       </div>
 
+      {/* Google Tag Manager (noscript) */}
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-P4XX78S9"
+          height="0"
+          width="0"
+          style={{ display: "none", visibility: "hidden" }}
+        ></iframe>
+      </noscript>
+      {/* End Google Tag Manager (noscript) */}
 
       {/* Centered Content */}
       <div className="flex flex-col items-center justify-center min-h-screen relative z-10">
-        <div className="bg-white bg-opacity-90 shadow-lg rounded-lg p-4 sm:p-6 md:p-8 lg:p-10 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl text-center">
+        <div className="bg-white bg-opacity-90 shadow-lg rounded-lg p-4 sm:p-6 md:p-8 lg:p-10 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2                                                                                                                                                                                                                                                                                  xl text-center">
           {/* Heading */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-4">
             Thank You!
           </h1>
           {/* Subheading */}
           <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6">
-            Your submission has been received. We appreciate your time and
-            effort!
+            Your submission has been received. We appreciate your time and effort!
             <br />
             Our team will reach out soon!
           </p>
           <button
-            className="px-4 sm:px-6 py-2 sm:py-3 bg-orange-600 text-white font-semibold rounded-md hover:bg-orange-700 transition focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2"
+            className="px-4 sm:px-6 py-2 sm:py-3 bg-orange-600 text-white font-semibold rounded-md hover:bg-orange-700 transition focus:o                                                                                                                                                                                                                                                                                  utline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2"
             onClick={() => (window.location.href = "/")}
           >
             Go to Homepage
@@ -65,7 +74,7 @@ const ThankYouPage = () => {
             <FaFacebook />
           </a>
           <a
-            href="https://www.linkedin.com/posts/connect-trip_mptourism-bundelkhandhackathon-tourismpromotion-activity-7263206882167672833-aJvT?utm_source=share&utm_medium=member_android"
+            href="https://www.linkedin.com/posts/connect-trip_mptourism-bundelkhandhackathon-tourismpromotion-activity-726320688216767283                                                                                                                                                                                                                                                                                  3-aJvT?utm_source=share&utm_medium=member_android"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-700 text-lg sm:text-xl hover:text-blue-900"

@@ -6,7 +6,7 @@ import SignUpForm from "../components/form";
 import Footer from "../components/footer";
 import { dubaiPackages, kashmirPackages, testimonials } from "../data/packagesData";
 import { WiStars } from "react-icons/wi";
-import { FaTag, FaPhone } from "react-icons/fa6";
+import { FaTag, FaPhone , FaStar  } from "react-icons/fa6";
 
 import { useState } from "react";
 
@@ -75,7 +75,12 @@ const Card = ({
       <div className="p-4 flex flex-col gap-2">
         <div className="flex justify-between items-center">
           <p className="text-gray-500 text-sm">{duration}</p>
-          
+          {tag && (
+            <div className="flex items-center gap-1 text-xs bg-green-600 text-white px-2 py-1 rounded-full">
+              < FaStar  />
+              <span>4.5</span>  
+            </div>
+          )}
         </div>
         <h2 className="text-gray-800 text-lg font-semibold">{packageName}</h2>
         <ul className="flex flex-wrap gap-2">

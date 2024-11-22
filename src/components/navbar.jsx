@@ -2,11 +2,16 @@ import { FaPhone } from "react-icons/fa6";
 import { MdPayment } from "react-icons/md";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const handleCall = () => {
     window.open("tel:+91-963-010-7798", "_self"); // Opens in the same tab
   };
+  const handlePayment=()=>{
+    navigate('/payment')
+  }
 
   return (
     <nav className="w-full">
@@ -54,6 +59,7 @@ const Navbar = () => {
           <div className="flex items-center gap-x-2 bg-[#F37002] md:px-5 px-2.5 rounded-2xl md:py-1 py-2 md:text-base text-[0.65rem]">
             <MdPayment className="text-[#F7F7F7] " />
             <button
+            onClick={handlePayment}
               aria-label="Make a payment"
               className="text-[#F7F7F7] font-semibold uppercase"
             >

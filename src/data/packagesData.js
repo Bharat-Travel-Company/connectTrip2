@@ -1,23 +1,23 @@
-import kashmir_1 from "../assets/kashmir/kashmir_1-min.jpg";
-import kashmir_2 from "../assets/kashmir/kashmir_2-min.jpg";
-import kashmir_3 from "../assets/kashmir/kashmir_3-min.jpg";
-import kashmir_4 from "../assets/kashmir/kashmir_4-min.jpg";
-import kashmir_5 from "../assets/kashmir/kashmir_5-min.jpg";
-import kashmir_6 from "../assets/kashmir/kashmir_6-min.jpg";
-import kashmir_7 from "../assets/kashmir/kashmir_7-min.jpg";
-import kashmir_8 from "../assets/kashmir/kashmir_8-min.jpg";
-import kashmir_9 from "../assets/kashmir/kashmir_9-min.jpg";
-import andaman_1 from "../assets/kashmir/andaman_1-min.jpg";
-import andaman_2 from "../assets/kashmir/andaman_2-min.jpg";
-import andaman_3 from "../assets/kashmir/andaman_3-min.jpg";
-import andaman_4 from "../assets/kashmir/andaman_4-min.jpg";
-import andaman_5 from "../assets/kashmir/andaman_5-min.jpg";
-import dubai_1 from "../assets/kashmir/dubai_1-min.jpg";
-import dubai_2 from "../assets/kashmir/dubai_2-min.jpg";
-import dubai_3 from "../assets/kashmir/dubai_3-min.jpg";
-import kerela_2 from "../assets/kashmir/kerela_2-min.jpg";
-import thailand_1 from "../assets/kashmir/thailand_1-min.jpg";
-import thailand_2 from "../assets/kashmir/thailand_2.jpg";
+import kashmir_1 from "../assets/kashmir/kashmir_1-min.webp";
+import kashmir_2 from "../assets/kashmir/kashmir_2-min.webp";
+import kashmir_3 from "../assets/kashmir/kashmir_3-min.webp";
+import kashmir_4 from "../assets/kashmir/kashmir_4-min.webp";
+import kashmir_5 from "../assets/kashmir/kashmir_5-min.webp";
+import kashmir_6 from "../assets/kashmir/kashmir_6-min.webp";
+import kashmir_7 from "../assets/kashmir/kashmir_7-min.webp";
+import kashmir_8 from "../assets/kashmir/kashmir_8-min.webp";
+import kashmir_9 from "../assets/kashmir/kashmir_9-min.webp";
+import andaman_1 from "../assets/kashmir/andaman_1-min.webp";
+import andaman_2 from "../assets/kashmir/andaman_2-min.webp";
+import andaman_3 from "../assets/kashmir/andaman_3-min.webp";
+import andaman_4 from "../assets/kashmir/andaman_4-min.webp";
+import andaman_5 from "../assets/kashmir/andaman_5-min.webp";
+import dubai_1 from "../assets/kashmir/dubai_1-min.webp";
+import dubai_2 from "../assets/kashmir/dubai_2-min.webp";
+import dubai_3 from "../assets/kashmir/dubai_3-min.webp";
+import kerela_2 from "../assets/kashmir/kerela_2-min.webp";
+import thailand_1 from "../assets/kashmir/thailand_1-min.webp";
+import thailand_2 from "../assets/kashmir/thailand_2.webp";
 
 
 export const kashmirPackages = [
@@ -425,7 +425,7 @@ export const andamanPackages = [
       "Meals",
       "Transfers",
     ],
-    image: "/port.jpg",
+    image: "/port.webp",
     tag: "Recommended",
     stayDetails: [
       { day: "3D", location: "Port Blair" },
@@ -445,7 +445,7 @@ export const andamanPackages = [
       "Meals",
       "Transfers",
     ],
-    image: "/atp.jpg",
+    image: "/atp.webp",
     tag: "Trending",
     stayDetails: [
       { day: "3D", location: "Port Blair" },
@@ -465,7 +465,7 @@ export const andamanPackages = [
       "Meals",
       "Transfers",
     ],
-    image: "/ntp.jpg",
+    image: "/ntp.webp",
     tag: "Newly Launched",
     stayDetails: [
       { day: "3D", location: "Port Blair" },
@@ -485,7 +485,7 @@ export const andamanPackages = [
       "Meals",
       "Transfers",
     ],
-    image: "/atp.jpg",
+    image: "/atp.webp",
     tag: "Family Favorite",
     stayDetails: [
       { day: "5D", location: "Port Blair" },
@@ -818,7 +818,7 @@ export const himachalPackages = [
     originalPrice: "₹ 10,999",
     discountedPrice: "₹ 8,999",
     discount: "18% OFF",
-    image: "/dharmshala.jpg",
+    image: "/dharmshala.webp",
     inclusions: [
       "Hotels",
       "Meals",
@@ -834,7 +834,7 @@ export const himachalPackages = [
     originalPrice: "₹ 10,499",
     discountedPrice: "₹ 7,999",
     discount: "24% OFF",
-    image: "/mhp.jpg",
+    image: "/mhp.webp",
     inclusions: [
       "Hotels",
       "Meals",
@@ -850,7 +850,7 @@ export const himachalPackages = [
     originalPrice: "₹ 19,999",
     discountedPrice: "₹ 15,299",
     discount: "23% OFF",
-    image: "/shimla manali with chandigarh.jpg",
+    image: "/shimla manali with chandigarh.webp",
     inclusions: [
       "Hotels",
       "Meals",
@@ -929,7 +929,7 @@ export const himachalPackages = [
     originalPrice: "₹ 10,999",
     discountedPrice: "₹ 8,999",
     discount: "18% OFF",
-    image: "htp.jpg",
+    image: "htp.webp",
     inclusions: [
       "Hotel Accommodation",
       "Meals",
@@ -980,7 +980,7 @@ export const dubaiPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Family Special",
-    image: "/dp2.jpg",
+    image: "/dp2.webp",
     stayDetails: [{ day: "6D", location: "Dubai" }],
   },
   {
@@ -1038,7 +1038,7 @@ export const dubaiPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Recommended",
-    image: "/dp5.jpg",
+    image: "/dp5.webp",
     stayDetails: [{ day: "6D", location: "Dubai" }],
   },
   {
@@ -1126,7 +1126,7 @@ export const thailandPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Trending",
-    image: "/tp3.jpg",
+    image: "/tp3.webp",
     stayDetails: [
       { day: "3D", location: "Bangkok" },
       { day: "2D", location: "Krabi" },

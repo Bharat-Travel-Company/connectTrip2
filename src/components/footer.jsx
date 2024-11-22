@@ -47,6 +47,5 @@ const styles = {
 };
 
 export default Footer;
-export const memoizedFooter=React.memo(Footer)
 
 

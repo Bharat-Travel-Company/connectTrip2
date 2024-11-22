@@ -53,7 +53,7 @@ const FAQItem = React.memo(({ question, answer, isOpen, onClick }) => {
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const handleClick =useCallback( (index) => {
+  const handleClick = useCallback( (index) => {
     setOpenIndex(openIndex === index ? null : index);
   },[]);
 
@@ -80,3 +80,4 @@ const FAQSection = () => {
 };
 
 export default FAQSection;
+export const MemoizedFAQSection =React.memo(FAQSection)

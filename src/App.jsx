@@ -79,7 +79,7 @@ function RouterContent() {
       "/thailand",
     ];
     setIsModalOpen(showModalPaths.includes(location.pathname));
-  }, [location.pathname]);
+  }, [location.pathname]); //Added logic to show the modal on specific pages: "/", "/kashmir", "/kerala", "/himachal", "/andamanandnikobar", "/dubai", "/thailand".
 
   return (
     <>

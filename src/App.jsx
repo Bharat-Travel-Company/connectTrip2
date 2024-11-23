@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import { useState, useEffect, Suspense, lazy } from "react";
 import SignUpForm from "./components/form"; // Excluded from lazy loading
 import WhatsAppButton from "./components/whatsApp";
@@ -16,13 +21,13 @@ const Thailand = lazy(() => import("./pages/Thailand"));
 const Tour = lazy(() => import("./pages/tour"));
 const ThankYou = lazy(() => import("./components/thankyouPage"));
 const PaymentPages = lazy(() => import("./pages/paymentpage"));
+
 const Modal = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (isOpen) {
       const timer = setTimeout(() => {
         onClose();
       }, 50000);
-
       return () => clearTimeout(timer);
     }
   }, [isOpen, onClose]);
@@ -43,52 +48,45 @@ const Modal = ({ isOpen, onClose }) => {
         >
           ✕
         </button>
-
-        {/* Heading */}
-        {/* <h2 className="text-center text-xl font-bold text-orange-600 mb-4">
-          Get Upto 30% OFF on Dubai Package
-        </h2> */}
-
-        {/* Form */}
         <section>
-          <SignUpForm></SignUpForm>
+          <SignUpForm />
         </section>
-        {/* Disclaimer */}
-
       </div>
     </div>
   );
 };
 
-
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-
   return (
     <Router>
-      <RouterContent isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      <RouterContent />
     </Router>
   );
 }
 
-function RouterContent({ isModalOpen, setIsModalOpen }) {
+function RouterContent() {
   const location = useLocation();
-  const [showModal, setShowModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
+
   useEffect(() => {
-    const shouldShowModal = ["/", "/kashmir", "/kerala", "/himachal", "/andamanandnikobar", "/dubai", "/thailand"].includes(location.pathname)
-    setShowModal(shouldShowModal)
-  }, [(location.pathname)])
+    const showModalPaths = [
+      "/",
+      "/kashmir",
+      "/kerala",
+      "/himachal",
+      "/andamanandnikobar",
+      "/dubai",
+      "/thailand",
+    ];
+    setIsModalOpen(showModalPaths.includes(location.pathname));
+  }, [location.pathname]);
 
   return (
     <>
-      {showModal && (<Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       )}
-
-      {/* <TruecallerButton></TruecallerButton> */}
-
-      <WhatsAppButton></WhatsAppButton>
-
-
+      <WhatsAppButton />
       <div className="w-full h-full">
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
@@ -109,7 +107,6 @@ function RouterContent({ isModalOpen, setIsModalOpen }) {
           </Routes>
         </Suspense>
       </div>
-
     </>
   );
 }

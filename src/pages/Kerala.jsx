@@ -41,7 +41,7 @@ const Card = ({
   const handleCall = () => {
     window.open("tel:+91-963-010-7798", "_blank");
   };
-  
+
   return (
     <div className="rounded-xl flex flex-col w-full gap-2 shadow-lg transition-shadow duration-300">
       <div className="w-full h-72 relative rounded-xl overflow-hidden">
@@ -49,6 +49,16 @@ const Card = ({
           {discount}
         </div>
         <img
+          loading="lazy"
+            fetchPriority="high"
+          srcSet={`${image}?width=100 100w, 
+           ${image}?width=200 200w, 
+           ${image}?width=400 400w, 
+           ${image}?width=800 800w`}
+          sizes="(max-width: 100px) 100w,
+         (max-width: 200px) 200w,
+         (max-width: 400px) 400w,
+         (max-width: 800px) 800w"
           src={image}
           alt={packageName}
           className="w-full h-full object-cover rounded-t-xl aspect-square"
@@ -117,7 +127,16 @@ const Card = ({
 const TestimonialCard = ({ testimonial, author, image }) => {
   return (
     <div className="rounded-xl flex flex-col items-center p-4 bg-white shadow-lg">
-      <img src={image} alt={author} className="w-16 h-16 rounded-full mb-4" />
+      <img loading="lazy"   fetchPriority="high"  decoding="async" 
+      srcSet={`
+           ${image}?width=100 100w, 
+           ${image}?width=200 200w, 
+           ${image}?width=400 400w, 
+           ${image}?width=800 800w`}
+        sizes="(max-width: 100px) 100w,
+         (max-width: 200px) 200w,
+         (max-width: 400px) 400w,
+         (max-width: 800px) 800w" src={image} alt={author} className="w-16 h-16 rounded-full mb-4" />
       <p className="text-gray-700 italic">"{testimonial}"</p>
       <p className="text-gray-900 font-semibold mt-2">- {author}</p>
     </div>

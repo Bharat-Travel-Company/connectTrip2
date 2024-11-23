@@ -272,7 +272,7 @@ export const home = [
       "All Sightseeing by Personal Car Ex Srinagar",
       "All Taxes and Allowances",
     ],
-    image: "/hptp.png",
+    image: "/hptp.webp",
     tag: "Trending",
     stayDetails: [
       { day: "2D", location: "Srinagar" },

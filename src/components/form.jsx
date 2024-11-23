@@ -1,9 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
+
+import { useNavigate } from "react-router-dom";
+
 import ReCAPTCHA from "react-google-recaptcha";
 
-const SignUpForm = ({ selectedPackage }) => {
 
+const SignUpForm = ({ selectedPackage }) => {
+  
+  const navigate = useNavigate();
   const title = selectedPackage?.packageName
   const [formData, setFormData] = useState({
     name: "",
@@ -12,11 +17,13 @@ const SignUpForm = ({ selectedPackage }) => {
     numberOfMembers: "",
     selectedPackage: title,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false); //Track the submission status
 
   // ReCaptcha verification
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const verifyCallback = (response) => {
-    setCaptchaVerified(response);
+   alert(response)
+   setCaptchaVerified(response)
   };
 
   const handleChange = (e) => {
@@ -29,18 +36,44 @@ const SignUpForm = ({ selectedPackage }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
 
-    const { name, phone, email, numberOfMembers, selectedPackage } = formData;
+    const { name, phone, email, numberOfMembers, selectedPackage} = formData;
     console.log(formData);
-    if (!email && !name && !phone) alert("Please fill all fields");
+    if (!email && !name && !phone ){
+      alert("Please fill all fields");
+      return;
+    } 
+    setIsSubmitting(true);  //Show loading state
+
     axios
-      .post(import.meta.env.VITE_FORM_URL, formData)
+      .post(`${import.meta.env.VITE_FORM_URL}/userDetails`, formData)
       .then((res) => {
         if (res.data.message === "Form submitted successfully") {
-          alert("Contact Form submitted");
+          setFormData({
+            name: "",
+            phone: "",
+            email: "",
+            numberOfMembers: "",
+            selectedPackage: title,
+            captchaResponse:captchaVerified
+          }); // Reset the form data
+          navigate("/thank-you");
         } else {
           alert(res.data.message);
         }
+      })
+      .catch((err) => {
+        if (err.response && err.response.data && err.response.data.message) {
+          // Show the backend's error message
+          alert(err.response.data.message);
+        } else {
+          // Show a generic error message for unexpected errors
+          alert("An error occurred. Please try again.");
+        }
+      })
+      .finally(() => {
+        setIsSubmitting(false); //Reset the loading
       });
   };
 
@@ -78,24 +111,26 @@ const SignUpForm = ({ selectedPackage }) => {
         </div>
       ))}
 
-      <div className="flex justify-center">
+      {/* <div className="flex justify-center"> */}
         <ReCAPTCHA
           sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
           onChange={verifyCallback}
         />
-      </div>
-
+      {/* </div> */}
+      
       {/* Submit Button */}
       <button
         className="w-full bg-orange-600 text-white font-semibold py-3 rounded-md hover:bg-orange-700 transition focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2"
         type="submit"
+        disabled={!captchaVerified}
+    
       >
         Apply For Offer
       </button>
 
       {/* Disclaimer */}
       <p className="text-xs text-gray-500 mt-4 text-center">
-        By clicking on "Submit", you agree to our{" "}
+        By clicking on &quot;Submit&quot;, you agree to our{" "}
         <a href="#" className="text-orange-600 underline">
           Privacy Policy
         </a>{" "}

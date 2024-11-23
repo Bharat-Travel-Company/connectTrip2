@@ -1,8 +1,22 @@
 import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { Modal } from "../pages/Kashmir";
+
 const Carousel = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [modalState, setModalState] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState(null);
+
+  const handleModalOpen = (pkg) => {
+    setSelectedPackage(pkg);
+    setModalState(true);
+  };
+
+  const handleModalClose = () => {
+    setModalState(false);
+    setSelectedPackage(null);
+  };
 
   const nextImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
@@ -11,6 +25,7 @@ const Carousel = ({ data }) => {
   const prevImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + data.length) % data.length);
   };
+
   useEffect(() => {
     const interval = setInterval(() => {
       nextImage();
@@ -20,17 +35,18 @@ const Carousel = ({ data }) => {
       clearInterval(interval);
     };
   }, []);
+
   return (
-    <div className="relative w-full lg:h-[calc(100vh)] md:h-[calc(100vh-2.5rem)] h-[calc(100vh-16rem)]  overflow-hidden">
-      <div className="absolute inset-0 w-full h-full ">
+    <div className="relative w-full lg:h-[calc(100vh)] md:h-[calc(100vh-2.5rem)] h-[calc(100vh-16rem)] overflow-hidden">
+      <div className="absolute inset-0 w-full h-full">
         <img
           loading="lazy"
-              fetchPriority="high"
+          fetchPriority="high"
           srcSet={`${data[currentIndex].image}?width=100 100w, 
            ${data[currentIndex].image}?width=200 200w, 
            ${data[currentIndex].image}?width=400 400w, 
            ${data[currentIndex].image}?width=800 800w`}
-  sizes="(max-width: 100px) 100w,
+          sizes="(max-width: 100px) 100w,
          (max-width: 200px) 200w,
          (max-width: 400px) 400w,
          (max-width: 800px) 800w"
@@ -46,23 +62,22 @@ const Carousel = ({ data }) => {
             <h3 className="text-white text-2xl font-semibold">
               {data[currentIndex].duration}
             </h3>
-            <div className="flex items-center my-[15px] min-h-[1px] min-w-[70vw]  bg-gradient-to-r from-[hsla(0,0%,100%,.05)] via-white to-[hsla(0,0%,88%,.05)]"></div>
-            <div className=" font-semibold flex items-center gap-2">
+            <div className="flex items-center my-[15px] min-h-[1px] min-w-[70vw] bg-gradient-to-r from-[hsla(0,0%,100%,.05)] via-white to-[hsla(0,0%,88%,.05)]"></div>
+            <div className="font-semibold flex items-center gap-2">
               <span className="text-3xl text-red-300 font-semibold line-through decoration-current my-auto">
                 {data[currentIndex].originalPrice}
               </span>
-              <span className="text-3xl text-white ">
+              <span className="text-3xl text-white">
                 {data[currentIndex].discountedPrice}
               </span>
-
             </div>
-
             <div className="flex items-center gap-x-1 bg-[#F37002] md:px-4 px-2.5 rounded-3xl md:py-2 py-2 md:text-base text-xs mt-4">
-              <Link to={data[currentIndex].url}>
-                <button className="text-[#F7F7F7] font-semibold uppercase">
-                  Check Offers
-                </button>
-              </Link>
+              <button
+                className="text-[#F7F7F7] font-semibold uppercase"
+                onClick={() => handleModalOpen(data[currentIndex])}
+              >
+                Check Offers
+              </button>
             </div>
           </div>
         </div>
@@ -72,7 +87,7 @@ const Carousel = ({ data }) => {
         onClick={prevImage}
       >
         <div className="flex items-center justify-center box-border bg-black/50 border border-[#e0e0e0] rounded-full lg:size-12 size-8">
-          <FaChevronLeft className="text-white  lg:text-2xl md:text-xl text-lg" />
+          <FaChevronLeft className="text-white lg:text-2xl md:text-xl text-lg" />
         </div>
       </div>
       <div
@@ -80,9 +95,18 @@ const Carousel = ({ data }) => {
         onClick={nextImage}
       >
         <div className="flex items-center justify-center box-border bg-black/50 border border-[#e0e0e0] rounded-full lg:size-12 size-8">
-          <FaChevronRight className="text-white  lg:text-2xl md:text-xl text-lg" />
+          <FaChevronRight className="text-white lg:text-2xl md:text-xl text-lg" />
         </div>
       </div>
+
+      {/* Render Modal */}
+      {modalState && (
+        <Modal
+          isOpen={modalState}
+          onClose={handleModalClose}
+          packageDetails={selectedPackage}
+        />
+      )}
     </div>
   );
 };

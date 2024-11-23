@@ -26,15 +26,22 @@ const Card = ({
         <div className=" absolute right-0 top-0 rounded-bl-lg bg-[#f57725] text-white px-2.5">
           {discount}
         </div>
+        {tag && (
+            <div className="absolute left-0 top-0 flex items-center gap-1 text-xs bg-green-600 text-white px-3 py-1 rounded-md ">
+              <FaTag />
+              <span>{tag}</span>
+            </div>
+          )}
         <img
-            fetchPriority="high"
+          fetchPriority="high"
           loading="lazy"
-           decoding="async"
-          srcSet={`${image}?width=100 100w, 
+          decoding="async"
+          srcSet={`
+           ${image}?width=100 100w, 
            ${image}?width=200 200w, 
            ${image}?width=400 400w, 
            ${image}?width=800 800w`}
-  sizes="(max-width: 100px) 100w,
+          sizes="(max-width: 100px) 100w,
          (max-width: 200px) 200w,
          (max-width: 400px) 400w,
          (max-width: 800px) 800w"
@@ -42,16 +49,12 @@ const Card = ({
           alt={packageName}
           className="w-full h-full object-cover rounded-t-xl aspect-square"
         />
+        
       </div>
       <div className="p-4 flex flex-col gap-2">
         <div className="flex justify-between items-center">
           <p className="text-gray-500 font-semibold">{duration}</p>
-          {tag && (
-            <div className="flex items-center gap-1 text-xs bg-green-600 text-white px-2 py-1 rounded-full">
-              <FaTag />
-              <span>{tag}</span>
-            </div>
-          )}
+          
         </div>
         <h2 className="text-gray-800 text-lg font-semibold">{packageName}</h2>
 

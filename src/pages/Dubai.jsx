@@ -6,7 +6,7 @@ import SignUpForm from "../components/form";
 import Footer from "../components/footer";
 import { dubaiPackages, kashmirPackages, testimonials } from "../data/packagesData";
 import { WiStars } from "react-icons/wi";
-import { FaTag, FaPhone } from "react-icons/fa6";
+import { FaTag, FaPhone , FaStar  } from "react-icons/fa6";
 
 import { useState } from "react";
 
@@ -49,6 +49,12 @@ const Card = ({
         <div className=" absolute right-0 top-0 rounded-bl-lg bg-[#f57725] text-white px-2.5">
           {discount}
         </div>
+        {tag && (
+            <div className="absolute left-0 top-0 flex items-center gap-1 text-xs bg-green-600 text-white px-3 py-1 rounded-md ">
+              <FaTag />
+              <span>{tag}</span>
+            </div>
+          )}
         <img
           loading="lazy"
           fetchPriority="high"
@@ -71,8 +77,8 @@ const Card = ({
           <p className="text-gray-500 text-sm">{duration}</p>
           {tag && (
             <div className="flex items-center gap-1 text-xs bg-green-600 text-white px-2 py-1 rounded-full">
-              <FaTag />
-              <span>{tag}</span>
+              < FaStar  />
+              <span>4.5</span>  
             </div>
           )}
         </div>

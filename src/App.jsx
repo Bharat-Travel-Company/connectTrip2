@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import { useState, useEffect, Suspense, lazy } from "react";
 import SignUpForm from "./components/form"; // Excluded from lazy loading
 import WhatsAppButton from "./components/whatsApp";
@@ -23,7 +28,6 @@ const Modal = ({ isOpen, onClose }) => {
       const timer = setTimeout(() => {
         onClose();
       }, 50000);
-
       return () => clearTimeout(timer);
     }
   }, [isOpen, onClose]);
@@ -44,69 +48,65 @@ const Modal = ({ isOpen, onClose }) => {
         >
           ✕
         </button>
-
-        {/* Heading */}
-        {/* <h2 className="text-center text-xl font-bold text-orange-600 mb-4">
-          Get Upto 30% OFF on Dubai Package
-        </h2> */}
-
-        {/* Form */}
         <section>
-          <SignUpForm></SignUpForm>
+          <SignUpForm />
         </section>
-        {/* Disclaimer */}
-
       </div>
     </div>
   );
 };
 
-
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-
   return (
     <Router>
-      <RouterContent isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      <RouterContent />
     </Router>
   );
 }
 
-function RouterContent({ isModalOpen, setIsModalOpen }) {
-  const location = useLocation(); 
-  const showModal = location.pathname === "/" // Show modal only on the home page
+function RouterContent() {
+  const location = useLocation();
+  const [isModalOpen, setIsModalOpen] = useState(true);
+
+  useEffect(() => {
+    const showModalPaths = [
+      "/",
+      "/kashmir",
+      "/kerala",
+      "/himachal",
+      "/andamanandnikobar",
+      "/dubai",
+      "/thailand",
+    ];
+    setIsModalOpen(showModalPaths.includes(location.pathname));
+  }, [location.pathname]); //Added logic to show the modal on specific pages: "/", "/kashmir", "/kerala", "/himachal", "/andamanandnikobar", "/dubai", "/thailand".
 
   return (
     <>
-      {showModal && (<Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       )}
-
-      {/* <TruecallerButton></TruecallerButton> */}
-
-      <WhatsAppButton></WhatsAppButton>
-
-      
-        <div className="w-full h-full">
+      <WhatsAppButton />
+      <div className="w-full h-full">
         <Suspense fallback={<div>Loading...</div>}>
-            <Routes>
-              <Route path="/" element={<MainHome />} />
-              <Route path="/kashmir" element={<Kashmir />} />
-              <Route path="/kerala" element={<Kerala />} />
-              <Route path="/himachal" element={<Himachal />} />
-              <Route path="/andamanandnikobar" element={<Andaman />} />
-              <Route path="/dubai" element={<Dubai />} />
-              <Route path="/thailand" element={<Thailand />} />
-              <Route path="/tour" element={<Tour />} />
-              <Route path="/form" element={<SignUpForm />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-              <Route path="/refund-policy" element={<PaymentPolicy/>}/>
-              <Route path="/thank-you" element={<ThankYou />} />
-              <Route path="/payment" element={<PaymentPages/>}/>
-            </Routes>
-          </Suspense>
-        </div>
-    
+          <Routes>
+            <Route path="/" element={<MainHome />} />
+            <Route path="/kashmir" element={<Kashmir />} />
+            <Route path="/kerala" element={<Kerala />} />
+            <Route path="/himachal" element={<Himachal />} />
+            <Route path="/andamanandnikobar" element={<Andaman />} />
+            <Route path="/dubai" element={<Dubai />} />
+            <Route path="/thailand" element={<Thailand />} />
+            <Route path="/tour" element={<Tour />} />
+            <Route path="/form" element={<SignUpForm />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/refund-policy" element={<PaymentPolicy />} />
+            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/payment" element={<PaymentPages />} />
+          </Routes>
+        </Suspense>
+      </div>
     </>
   );
 }

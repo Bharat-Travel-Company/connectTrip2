@@ -6,17 +6,17 @@ import SignUpForm from "../components/form";
 import Footer from "../components/footer";
 import { kashmirPackages, testimonials } from "../data/packagesData";
 import { WiStars } from "react-icons/wi";
-import { FaTag, FaPhone } from "react-icons/fa6";
+import { FaTag, FaPhone,FaStar } from "react-icons/fa6";
 
 import { useState } from "react";
 
-const Modal = ({ onClose, selectedPackage }) => {
+export const Modal = ({ onClose, selectedPackage }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg relative md:max-w-md max-w-sm w-full">
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-[#FFDA32] bg-[#0F1E32] hover:text-[#0F1E32] hover:bg-[#FFDA32] rounded-full size-8"
+          className="absolute top-2 right-2 text-gray-100 bg-orange-600 hover:text-gray-200 hover:bg-orange-500 rounded-full h-8 w-8 flex items-center justify-center"
         >
           ✕
         </button>
@@ -49,6 +49,12 @@ const Card = ({
         <div className=" absolute right-0 top-0 rounded-bl-lg bg-[#f57725] text-white px-2.5">
           {discount}
         </div>
+        {tag && (
+            <div className="absolute left-0 top-0 flex items-center gap-1 text-xs bg-green-600 text-white px-3 py-1 rounded-md ">
+              <FaTag />
+              <span>{tag}</span>
+            </div>
+          )}
         <img
           loading="lazy"
             fetchPriority="high"
@@ -71,8 +77,8 @@ const Card = ({
           <p className="text-gray-500 text-sm">{duration}</p>
           {tag && (
             <div className="flex items-center gap-1 text-xs bg-green-600 text-white px-2 py-1 rounded-full">
-              <FaTag />
-              <span>{tag}</span>
+              < FaStar  />
+              <span>4.5</span>  
             </div>
           )}
         </div>

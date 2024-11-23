@@ -23,7 +23,7 @@ const Navbar =React.memo(() => {
         <div className="flex items-center justify-start flex-grow">
           <Link to="/" className="pl-1 font-semibold">
             <img
-              fetchPriority="high"
+              fetchpriority="high"
               loading="lazy"
               srcSet={`${logo}?width=100 100w, 
                        ${logo}?width=200 200w, 

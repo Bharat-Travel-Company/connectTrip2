@@ -49,7 +49,7 @@ const Card = ({
           {discount}
         </div>
         <img
-            fetchPriority="high"
+            fetchpriority="high"
           loading="lazy"
            decoding="async"
           srcSet={`${image}?width=100 100w, 

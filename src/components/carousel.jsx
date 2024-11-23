@@ -25,7 +25,7 @@ const Carousel = ({ data }) => {
     <div className="relative w-full lg:h-[calc(100vh)] md:h-[calc(100vh-2.5rem)] h-[calc(100vh-16rem)]  overflow-hidden">
       <div className="absolute inset-0 w-full h-full ">
         <img
-          fetchPriority="high"
+          fetchpriority="high"
           srcSet={`${data[currentIndex].image}?width=100 100w, 
            ${data[currentIndex].image}?width=200 200w, 
            ${data[currentIndex].image}?width=400 400w, 

@@ -72,8 +72,12 @@ function App() {
 }
 
 function RouterContent({ isModalOpen, setIsModalOpen }) {
-  const location = useLocation(); 
-  const showModal = location.pathname === "/" // Show modal only on the home page
+  const location = useLocation();
+  const [showModal, setShowModal] = useState(false);
+  useEffect(() => {
+    const shouldShowModal = ["/", "/kashmir", "/kerala", "/himachal", "/andamanandnikobar", "/dubai", "/thailand"].includes(location.pathname)
+    setShowModal(shouldShowModal)
+  }, [(location.pathname)])
 
   return (
     <>
@@ -84,28 +88,28 @@ function RouterContent({ isModalOpen, setIsModalOpen }) {
 
       <WhatsAppButton></WhatsAppButton>
 
-      
-        <div className="w-full h-full">
+
+      <div className="w-full h-full">
         <Suspense fallback={<div>Loading...</div>}>
-            <Routes>
-              <Route path="/" element={<MainHome />} />
-              <Route path="/kashmir" element={<Kashmir />} />
-              <Route path="/kerala" element={<Kerala />} />
-              <Route path="/himachal" element={<Himachal />} />
-              <Route path="/andamanandnikobar" element={<Andaman />} />
-              <Route path="/dubai" element={<Dubai />} />
-              <Route path="/thailand" element={<Thailand />} />
-              <Route path="/tour" element={<Tour />} />
-              <Route path="/form" element={<SignUpForm />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-              <Route path="/refund-policy" element={<PaymentPolicy/>}/>
-              <Route path="/thank-you" element={<ThankYou />} />
-              <Route path="/payment" element={<PaymentPages/>}/>
-            </Routes>
-          </Suspense>
-        </div>
-    
+          <Routes>
+            <Route path="/" element={<MainHome />} />
+            <Route path="/kashmir" element={<Kashmir />} />
+            <Route path="/kerala" element={<Kerala />} />
+            <Route path="/himachal" element={<Himachal />} />
+            <Route path="/andamanandnikobar" element={<Andaman />} />
+            <Route path="/dubai" element={<Dubai />} />
+            <Route path="/thailand" element={<Thailand />} />
+            <Route path="/tour" element={<Tour />} />
+            <Route path="/form" element={<SignUpForm />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/refund-policy" element={<PaymentPolicy />} />
+            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/payment" element={<PaymentPages />} />
+          </Routes>
+        </Suspense>
+      </div>
+
     </>
   );
 }

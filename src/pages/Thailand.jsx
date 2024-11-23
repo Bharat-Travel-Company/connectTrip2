@@ -6,7 +6,7 @@ import SignUpForm from "../components/form";
 import Footer from "../components/footer";
 import { dubaiPackages, kashmirPackages, thailandPackages, testimonials } from "../data/packagesData";
 import { WiStars } from "react-icons/wi";
-import { FaTag, FaPhone } from "react-icons/fa6";
+import { FaTag, FaPhone,FaStar } from "react-icons/fa6";
 import { useState } from "react";
 
 const Modal = ({ onClose, selectedPackage }) => {
@@ -49,7 +49,7 @@ const Card = ({
           {discount}
         </div>
         <img
-            fetchpriority="high"
+            fetchPriority="high"
           loading="lazy"
            decoding="async"
           srcSet={`${image}?width=100 100w, 
@@ -71,8 +71,8 @@ const Card = ({
           <p className="text-gray-500 text-sm">{duration}</p>
           {tag && (
             <div className="flex items-center gap-1 text-xs bg-green-600 text-white px-2 py-1 rounded-full">
-              <FaTag />
-              <span>{tag}</span>
+              < FaStar />
+              <span>4.5</span>
             </div>
           )}
         </div>

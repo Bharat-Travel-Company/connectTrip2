@@ -1,8 +1,8 @@
 import React from "react";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
-import backgroundImage from "../assets/3420650.webp";
+import backgroundImage from "../assets/3420650.jpg";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.webp";
+import logo from "../assets/logo.png";
 
 const PaymentPages = () => {
   return (

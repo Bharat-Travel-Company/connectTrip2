@@ -50,7 +50,7 @@ const Card = ({
         </div>
         <img
           loading="lazy"
-          fetchpriority="high"
+            fetchPriority="high"
           srcSet={`${image}?width=100 100w, 
            ${image}?width=200 200w, 
            ${image}?width=400 400w, 

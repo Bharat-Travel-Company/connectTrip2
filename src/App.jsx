@@ -16,15 +16,23 @@ const Thailand = lazy(() => import("./pages/Thailand"));
 const Tour = lazy(() => import("./pages/tour"));
 const ThankYouPage = lazy(() => import("./components/thankyouPage"));
 const ListLeads = lazy(() => import('./components/DisplayData'));
-const ThankYou = lazy(() => import("./components/thankyouPage"));
+// const ThankYou = lazy(() => import("./components/thankyouPage"));
 const PaymentPages = lazy(() => import("./pages/paymentpage"));
+
+import TagManager from "react-gtm-module";
+
+const tagManagerArgs = {
+  gtmId: "GTM-5BPH48RC", // Replace with your GTM container ID
+};
+
+TagManager.initialize(tagManagerArgs);
 
 const Modal = ({ isOpen, onClose }) => {
   useEffect(() => {
     if (isOpen) {
       const timer = setTimeout(() => {
         onClose();
-      }, 50000);
+      }, 60000);
 
       return () => clearTimeout(timer);
     }
@@ -107,7 +115,7 @@ function RouterContent({ isModalOpen, setIsModalOpen }) {
               <Route path="/thank-you" element={<ThankYouPage />} />
               <Route path="/list-leads" element={<ListLeads />} />
 
-              <Route path="/thank-you" element={<ThankYou />} />
+              {/* <Route path="/thank-you" element={<ThankYou />} /> */}
               <Route path="/payment" element={<PaymentPages/>}/>
             </Routes>
           </Suspense>

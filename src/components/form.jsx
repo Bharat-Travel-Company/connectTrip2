@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import axios from "axios"
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 // import { useNavigate } from "react-router-dom";
@@ -15,6 +15,7 @@ const SignUpForm = ({ selectedPackage }) => {
     name: "",
     phone: "",
     email: "",
+    password: "",
     numberOfMembers: "",
     selectedPackage: title,
   });
@@ -36,17 +37,25 @@ const SignUpForm = ({ selectedPackage }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { name, phone, email, numberOfMembers, selectedPackage } = formData;
+    const { name, phone, email, password, numberOfMembers, selectedPackage } = formData;
 
     if (!captchaVerified) {
       alert("Please verify that you are not a robot.");
       return;
     }
 
-    if (!email || !name || !phone) {
+    if (!email || !name || !phone ||!password) {
       alert("Please fill all fields.");
       return;
     }
+
+    if (!/^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*\d)[A-Za-z\d!@#$%^&*]{6,}$/.test(password)) {
+      alert(
+        "Password must be at least 6 characters long, include at least one uppercase letter, one number, and one special character."
+      );
+      return;
+    }
+    
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       alert("Please enter a valid email.");
@@ -55,30 +64,31 @@ const SignUpForm = ({ selectedPackage }) => {
 
     setIsSubmitting(true);
 
-          axios.post(`${import.meta.env.VITE_USER_DATA_URL}`, formData)
-  .then((res) => {
-    if (res.data.message === "Form submitted successfully") {
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        numberOfMembers: "",
-        selectedPackage: title,
+    axios
+      .post(`${import.meta.env.VITE_USER_DATA_URL}`, formData)
+      .then((res) => {
+        if (res.data.message === "Form submitted successfully") {
+          setFormData({
+            name: "",
+            phone: "",
+            email: "",
+            password: "",
+            numberOfMembers: "",
+            selectedPackage: title,
+          });
+          navigate("/thank-you");
+        } else {
+          alert(res.data.message);
+        }
+      })
+      .catch((err) => {
+        alert(
+          err.response?.data?.message || "An error occurred. Please try again."
+        );
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
-      navigate("/thank-you");
-    } else {
-      alert(res.data.message);
-    }
-  })
-  .catch((err) => {
-    alert(
-      err.response?.data?.message || "An error occurred. Please try again."
-    );
-  })
-  .finally(() => {
-    setIsSubmitting(false);
-  });
-
   };
 
   return (
@@ -87,7 +97,7 @@ const SignUpForm = ({ selectedPackage }) => {
         Request Callback for: {selectedPackage?.packageName}
       </h2>
 
-      {["name", "phone", "email", "numberOfMembers"].map((field) => (
+      {["name", "phone", "email", "password", "numberOfMembers"].map((field) => (
         <div key={field} className="w-full">
           <label className="block mb-2 text-sm text-orange-600" htmlFor={field}>
             {field.charAt(0).toUpperCase() + field.slice(1)}
@@ -96,6 +106,8 @@ const SignUpForm = ({ selectedPackage }) => {
             type={
               field === "email"
                 ? "email"
+                : field === "password"
+                ? "password"
                 : field === "numberOfMembers"
                 ? "number"
                 : "text"
@@ -104,7 +116,7 @@ const SignUpForm = ({ selectedPackage }) => {
             name={field}
             value={formData[field]}
             onChange={handleChange}
-            className="w-full bg-white text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-                                                                                                                                                                                                                                                                                                                                                                                                orange-600"
+            className="w-full bg-white text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600"
             required
           />
         </div>
@@ -118,7 +130,7 @@ const SignUpForm = ({ selectedPackage }) => {
       </div>
 
       <button
-        className="w-full bg-orange-600 text-white font-semibold py-3 rounded-md hover:bg-orange-700 transition focus:outline-none focus:ring-2 focus:ring-orange-60                                                                                                                                                                                                                                                                                                                                                                                                0 focus:ring-offset-2"
+        className="w-full bg-orange-600 text-white font-semibold py-3 rounded-md hover:bg-orange-700 transition focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-offset-2"
         type="submit"
         disabled={isSubmitting}
       >
@@ -133,7 +145,8 @@ const SignUpForm = ({ selectedPackage }) => {
         and{" "}
         <a href="#" className="text-orange-600 underline">
           Terms of Use
-        </a>.
+        </a>
+        .
       </p>
     </form>
   );

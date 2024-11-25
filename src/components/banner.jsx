@@ -1,6 +1,9 @@
+import React from "react";
 import { FaArrowRight, FaGift } from "react-icons/fa";
 
-const SalesBanner = () => {
+const SalesBanner = React.memo(() => {
+  console.log("salesBanner");
+  
   const gradientClasses = "bg-gradient-to-br from-[#f57725] to-[#fcaf17]";
   const buttonClasses =
     "text-[#0F1E32] bg-white hover:bg-gray-50 px-4 py-2 rounded-lg w-fit ease duration-300 flex gap-1 items-center group";
@@ -33,6 +36,6 @@ const SalesBanner = () => {
       </div>
     </section>
   );
-};
+});
 
 export default SalesBanner;

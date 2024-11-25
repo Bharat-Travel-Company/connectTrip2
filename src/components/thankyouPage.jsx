@@ -1,7 +1,9 @@
 import React from "react";
 import { FaFacebook, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
+
 import logo from "../assets/logo.png";
 import backgroundImage from "../assets/travel-collage-of-famous-places-and-buildings-JEC038.jpg";
+
 
 const ThankYouPage = () => {
   return (

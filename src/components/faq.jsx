@@ -1,3 +1,4 @@
+import React, { useCallback } from 'react';
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 const faqs = [
@@ -27,7 +28,9 @@ const faqs = [
       "Yes, we offer discounts for group bookings. The discount amount depends on the group size and tour package.",
   },
 ];
-const FAQItem = ({ question, answer, isOpen, onClick }) => {
+const FAQItem = React.memo(({ question, answer, isOpen, onClick }) => {
+  console.log("question: ");
+  
   return (
     <div className="" onClick={onClick}>
       <button className="flex items-center gap-1 w-full p-2" onClick={onClick}>
@@ -45,14 +48,14 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
       </div>
     </div>
   );
-};
+});
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const handleClick = (index) => {
+  const handleClick = useCallback( (index) => {
     setOpenIndex(openIndex === index ? null : index);
-  };
+  },[]);
 
   return (
     <section className="">
@@ -77,3 +80,4 @@ const FAQSection = () => {
 };
 
 export default FAQSection;
+export const MemoizedFAQSection =React.memo(FAQSection)

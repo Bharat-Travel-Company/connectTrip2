@@ -1,5 +1,6 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -7,7 +8,9 @@ import { FaYoutube } from "react-icons/fa";
 
 
 import { FaTwitter } from "react-icons/fa";
-const Footer = () => {
+const Footer = React.memo(() => {
+  console.log("footer");
+  
   return (
     <footer className="w-full bg-[#E2DFD0] flex flex-col items-center justify-center gap-5">
       <div className='flex justify-center items-center pt-10'>
@@ -33,7 +36,7 @@ const Footer = () => {
       </strong>
     </footer>
   );
-};
+});
 
 const styles = {
   footerLink: {

@@ -33,7 +33,7 @@ const PaymentPages = () => {
       </div>
 
       {/* Content Wrapper */}
-      <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto mt-12 px-4 sm:px-8 gap-8">
+      <div className="flex flex-col md:flex-row  w-full max-w-6xl mx-auto mt-[100px] px-4 sm:px-8 gap-8">
         {/* Left Section: Tour Package Booking */}
         <div className="w-full md:w-1/3 bg-orange-10 bg-opacity-100 p-6 rounded-lg shadow-lg">
           <h2 className="text-2xl font-bold text-orange-600 mb-4 text-center">
@@ -77,16 +77,16 @@ const PaymentPages = () => {
             <p className="text-gray-700">
               Email:{" "}
               <a
-                href="mailto:booking@holidayhubindia.com"
+                href="mailto:connecttripindia@gmail.com"
                 className="text-blue-600"
               >
-                booking@connecttrip.com
+                connecttripindia@gmail.com
               </a>
             </p>
             <p className="text-gray-700">
               Phone:{" "}
               <a href="tel:+917289030406" className="text-blue-600">
-                +91-7289030406
+                +91-9630107798
               </a>
             </p>
           </div>
@@ -101,6 +101,11 @@ const PaymentPages = () => {
           <div>
             <Link to="/refund-policy" className="text-blue-600 underline">
               Refund Policy
+            </Link>
+          </div>
+          <div>
+            <Link to="/privacy-policy" className="text-blue-600 underline">
+              Privacy Policy
             </Link>
           </div>
         </div>
@@ -162,12 +167,12 @@ const PaymentPages = () => {
               Pay ₹ 0.00
             </button>
           </form>
-          <div className="flex items-center gap-4 mt-6">
+          {/* <div className="flex items-center gap-4 mt-6">
             <img src="upi-icon.svg" alt="UPI" className="w-10" />
             <img src="visa-icon.svg" alt="Visa" className="w-10" />
             <img src="mastercard-icon.svg" alt="Mastercard" className="w-10" />
             <img src="rupay-icon.svg" alt="RuPay" className="w-10" />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

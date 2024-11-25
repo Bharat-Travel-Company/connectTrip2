@@ -48,10 +48,16 @@ const Card = ({
         <div className="absolute right-0 top-0 rounded-bl-lg bg-[#f57725] text-white px-2.5">
           {discount}
         </div>
+        {tag && (
+          <div className="absolute left-0 top-0 flex items-center gap-1 text-xs bg-green-600 text-white px-3 py-1 rounded-md ">
+            <FaTag />
+            <span>{tag}</span>
+          </div>
+        )}
         <img
-            fetchpriority="high"
+          fetchPriority="high"
           loading="lazy"
-           decoding="async"
+          decoding="async"
           srcSet={`${image}?width=100 100w, 
            ${image}?width=200 200w, 
            ${image}?width=400 400w, 
@@ -75,6 +81,12 @@ const Card = ({
               <span>4.5</span>
             </div>
           )}
+
+          <div className="flex items-center gap-1 text-xs bg-green-600 text-white px-2 py-1 rounded-full">
+            < FaStar />
+            <span>4.5</span>
+          </div>
+
         </div>
         <h2 className="text-gray-800 text-lg font-semibold">{packageName}</h2>
         <ul className="flex flex-wrap gap-2">
@@ -142,6 +154,13 @@ const TestimonialCard = ({ testimonial, author, image }) => {
          (max-width: 400px) 400w,
          (max-width: 800px) 800w"
           fetchPriority="high"
+        src={image}
+        alt={author}
+        className="w-16 h-16 rounded-full mb-4" />
+      <img
+        loading="lazy"
+        decoding="async"
+        fetchPriority="high"
         src={image}
         alt={author}
         className="w-16 h-16 rounded-full mb-4" />

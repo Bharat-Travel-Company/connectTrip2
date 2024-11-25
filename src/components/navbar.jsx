@@ -2,7 +2,7 @@ import React from "react";
 import { FaPhone } from "react-icons/fa6";
 import { MdPayment } from "react-icons/md";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 const Navbar = React.memo(() => {
   const handleCall = () => {
     window.open("tel:+91-963-010-7798", "_self"); // Opens in the same tab
@@ -18,7 +18,7 @@ const Navbar = React.memo(() => {
         <div className="flex items-center justify-start flex-grow">
           <Link to="/" className="pl-1 font-semibold">
             <img
-              fetchPriority="high"
+              fetchpriority="high"
               loading="lazy"
               srcSet={`${logo}?width=100 100w, 
                        ${logo}?width=200 200w, 

@@ -117,7 +117,7 @@ const Tour = () => {
         <div className="absolute inset-0 w-full h-full">
           <img
             loading="lazy"
-                fetchPriority="high"
+            fetchpriority="high"
             decoding="async"
             srcSet={`${tourPackage?.imgSrc}?width=100 100w, 
            ${tourPackage?.imgSrc}?width=200 200w, 

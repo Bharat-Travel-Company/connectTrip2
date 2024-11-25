@@ -6,17 +6,17 @@ import SignUpForm from "../components/form";
 import Footer from "../components/footer";
 import { kashmirPackages, testimonials } from "../data/packagesData";
 import { WiStars } from "react-icons/wi";
-import { FaTag, FaPhone } from "react-icons/fa6";
+import { FaTag, FaPhone, FaStar } from "react-icons/fa6";
 
 import { useState } from "react";
 
-const Modal = ({ onClose, selectedPackage }) => {
+export const Modal = ({ onClose, selectedPackage }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-8 rounded-lg shadow-lg relative md:max-w-md max-w-sm w-full">
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-[#FFDA32] bg-[#0F1E32] hover:text-[#0F1E32] hover:bg-[#FFDA32] rounded-full size-8"
+          className="absolute top-2 right-2 text-gray-100 bg-orange-600 hover:text-gray-200 hover:bg-orange-500 rounded-full h-8 w-8 flex items-center justify-center"
         >
           ✕
         </button>
@@ -49,15 +49,21 @@ const Card = ({
         <div className=" absolute right-0 top-0 rounded-bl-lg bg-[#f57725] text-white px-2.5">
           {discount}
         </div>
+        {tag && (
+          <div className="absolute left-0 top-0 flex items-center gap-1 text-xs bg-green-600 text-white px-3 py-1 rounded-md">
+            <FaTag />
+            <span>{tag}</span>
+          </div>
+        )}
         <img
           loading="lazy"
-            fetchPriority="high"
-           decoding="async"
+          fetchPriority="high"
+          decoding="async"
           srcSet={`${image}?width=100 100w, 
            ${image}?width=200 200w, 
            ${image}?width=400 400w, 
            ${image}?width=800 800w`}
-  sizes="(max-width: 100px) 100w,
+          sizes="(max-width: 100px) 100w,
          (max-width: 200px) 200w,
          (max-width: 400px) 400w,
          (max-width: 800px) 800w"
@@ -69,12 +75,10 @@ const Card = ({
       <div className="p-4 flex flex-col gap-2">
         <div className="flex justify-between items-center">
           <p className="text-gray-500 text-sm">{duration}</p>
-          {tag && (
-            <div className="flex items-center gap-1 text-xs bg-green-600 text-white px-2 py-1 rounded-full">
-              <FaTag />
-              <span>{tag}</span>
-            </div>
-          )}
+          <div className="flex items-center gap-1 text-xs bg-green-600 text-white px-2 py-1 rounded-full">
+            <FaStar />
+            <span>4.5</span>
+          </div>
         </div>
         <h2 className="text-gray-800 text-lg font-semibold">{packageName}</h2>
         <ul className="flex flex-wrap gap-2">
@@ -129,14 +133,8 @@ const Card = ({
 const TestimonialCard = ({ testimonial, author, image }) => {
   return (
     <div className="rounded-xl flex flex-col items-center p-4 bg-white shadow-lg">
-      <img loading="lazy"   fetchPriority="high"  decoding="async" srcSet={`${image}?width=100 100w, 
-           ${image}?width=200 200w, 
-           ${image}?width=400 400w, 
-           ${image}?width=800 800w`}
-        sizes="(max-width: 100px) 100w,
-         (max-width: 200px) 200w,
-         (max-width: 400px) 400w,
-         (max-width: 800px) 800w" src={image} alt={author} className="w-16 h-16 rounded-full mb-4" />
+      <img loading="lazy" fetchPriority="high" decoding="async"
+        src={image} alt={author} className="w-16 h-16 rounded-full mb-4" />
       <p className="text-gray-700 italic">"{testimonial}"</p>
       <p className="text-gray-900 font-semibold mt-2">- {author}</p>
     </div>

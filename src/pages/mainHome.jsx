@@ -33,7 +33,7 @@ const Card = ({
             </div>
           )}
         <img
-          fetchPriority="high"
+          fetchpriority="high"
           loading="lazy"
           decoding="async"
           srcSet={`

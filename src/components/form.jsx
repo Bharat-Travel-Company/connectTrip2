@@ -1,11 +1,7 @@
 import { useState } from "react";
-
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
-// import { useNavigate } from "react-router-dom";
-// import ReCAPTCHA from "react-google-recaptcha";
-// import axios from "axios";
 
 const SignUpForm = ({ selectedPackage }) => {
   const navigate = useNavigate();
@@ -15,7 +11,6 @@ const SignUpForm = ({ selectedPackage }) => {
     name: "",
     phone: "",
     email: "",
-    password: "",
     numberOfMembers: "",
     selectedPackage: title,
   });
@@ -37,25 +32,17 @@ const SignUpForm = ({ selectedPackage }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { name, phone, email, password, numberOfMembers, selectedPackage } = formData;
+    const { name, phone, email, numberOfMembers, selectedPackage } = formData;
 
     if (!captchaVerified) {
       alert("Please verify that you are not a robot.");
       return;
     }
 
-    if (!email || !name || !phone ||!password) {
+    if (!email || !name || !phone) {
       alert("Please fill all fields.");
       return;
     }
-
-    if (!/^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*\d)[A-Za-z\d!@#$%^&*]{6,}$/.test(password)) {
-      alert(
-        "Password must be at least 6 characters long, include at least one uppercase letter, one number, and one special character."
-      );
-      return;
-    }
-    
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       alert("Please enter a valid email.");
@@ -72,7 +59,6 @@ const SignUpForm = ({ selectedPackage }) => {
             name: "",
             phone: "",
             email: "",
-            password: "",
             numberOfMembers: "",
             selectedPackage: title,
           });
@@ -97,7 +83,7 @@ const SignUpForm = ({ selectedPackage }) => {
         Request Callback for: {selectedPackage?.packageName}
       </h2>
 
-      {["name", "phone", "email", "password", "numberOfMembers"].map((field) => (
+      {["name", "phone", "email", "numberOfMembers"].map((field) => (
         <div key={field} className="w-full">
           <label className="block mb-2 text-sm text-orange-600" htmlFor={field}>
             {field.charAt(0).toUpperCase() + field.slice(1)}
@@ -106,8 +92,6 @@ const SignUpForm = ({ selectedPackage }) => {
             type={
               field === "email"
                 ? "email"
-                : field === "password"
-                ? "password"
                 : field === "numberOfMembers"
                 ? "number"
                 : "text"

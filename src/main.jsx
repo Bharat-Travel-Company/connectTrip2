@@ -5,7 +5,7 @@ import './index.css'
 import TagManager from 'react-gtm-module'
 
 const tagManagerArgs = {
-  gtmId: 'GTM-TXFMZQHT', // Replace with your GTM ID
+  gtmId: 'GTM-NRW9SGVV', // Replace with your GTM ID
   dataLayer: {
     page: {
       url: window.location.href

@@ -425,7 +425,7 @@ export const andamanPackages = [
       "Meals",
       "Transfers",
     ],
-    image: "/port.webp",
+    image: "/port.jpg",
     tag: "Recommended",
     stayDetails: [
       { day: "3D", location: "Port Blair" },
@@ -445,7 +445,7 @@ export const andamanPackages = [
       "Meals",
       "Transfers",
     ],
-    image: "/atp.webp",
+    image: "/atp.jpg",
     tag: "Trending",
     stayDetails: [
       { day: "3D", location: "Port Blair" },
@@ -465,7 +465,7 @@ export const andamanPackages = [
       "Meals",
       "Transfers",
     ],
-    image: "/ntp.webp",
+    image: "/ntp.jpg",
     tag: "Newly Launched",
     stayDetails: [
       { day: "3D", location: "Port Blair" },
@@ -485,7 +485,7 @@ export const andamanPackages = [
       "Meals",
       "Transfers",
     ],
-    image: "/atp.webp",
+    image: "/atp.jpg",
     tag: "Family Favorite",
     stayDetails: [
       { day: "5D", location: "Port Blair" },
@@ -818,7 +818,7 @@ export const himachalPackages = [
     originalPrice: "₹ 10,999",
     discountedPrice: "₹ 8,999",
     discount: "18% OFF",
-    image: "/dharmshala.webp",
+    image: "/dharmshala.jpg",
     inclusions: [
       "Hotels",
       "Meals",
@@ -834,7 +834,7 @@ export const himachalPackages = [
     originalPrice: "₹ 10,499",
     discountedPrice: "₹ 7,999",
     discount: "24% OFF",
-    image: "/mhp.webp",
+    image: "/mhp.jpg",
     inclusions: [
       "Hotels",
       "Meals",
@@ -850,7 +850,7 @@ export const himachalPackages = [
     originalPrice: "₹ 19,999",
     discountedPrice: "₹ 15,299",
     discount: "23% OFF",
-    image: "/shimla manali with chandigarh.webp",
+    image: "/shimla manali with chandigarh.jpg",
     inclusions: [
       "Hotels",
       "Meals",
@@ -929,7 +929,7 @@ export const himachalPackages = [
     originalPrice: "₹ 10,999",
     discountedPrice: "₹ 8,999",
     discount: "18% OFF",
-    image: "htp.webp",
+    image: "htp.jpg",
     inclusions: [
       "Hotel Accommodation",
       "Meals",
@@ -980,7 +980,7 @@ export const dubaiPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Family Special",
-    image: "/dp2.webp",
+    image: "/dp2.jpg",
     stayDetails: [{ day: "6D", location: "Dubai" }],
   },
   {
@@ -1038,7 +1038,7 @@ export const dubaiPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Recommended",
-    image: "/dp5.webp",
+    image: "/dp5.jpg",
     stayDetails: [{ day: "6D", location: "Dubai" }],
   },
   {
@@ -1126,7 +1126,7 @@ export const thailandPackages = [
       "All Taxes and Allowances",
     ],
     tag: "Trending",
-    image: "/tp3.webp",
+    image: "/tp3.jpg",
     stayDetails: [
       { day: "3D", location: "Bangkok" },
       { day: "2D", location: "Krabi" },

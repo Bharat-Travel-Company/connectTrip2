@@ -1,7 +1,7 @@
 import { FaPhone } from "react-icons/fa6";
 import { MdPayment } from "react-icons/md";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {

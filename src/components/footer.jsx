@@ -30,7 +30,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-orange-500 flex-shrink-0 mt-1" />
                 <div className="text-gray-300">
-                  <p className="font-medium text-white">LEVEN TRAVEL AND TECHNOLOGY PRIVATE LIMITED</p>
+                  <p className="font-medium text-white">LEVIEN TRAVEL AND TECHNOLOGY PRIVATE LIMITED</p>
                   <p>Near Arvindo College,</p>
                   <p>Old Subhash Nagar,</p>
                   <p>Bhopal-462023</p>
